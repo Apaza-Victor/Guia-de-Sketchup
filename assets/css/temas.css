@@ -70,7 +70,7 @@ pre {
     --texto-suave: #555;
     --borde: #ddd;
   }
-  .navbar-app, .sidebar-modulos, .footer-app, .btn-icono, #modal-busqueda {
+  .navbar-app, .footer-app, .btn-icono, #modal-busqueda {
     display: none !important;
   }
   body {
