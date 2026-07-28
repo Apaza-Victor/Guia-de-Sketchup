@@ -19,8 +19,11 @@ const ENLACES_NAV = [
 ];
 
 function rutaBase() {
-  // Detecta si estamos en /paginas/ para ajustar rutas relativas
   return location.pathname.includes("/paginas/") ? "../" : "";
+}
+
+function rutaPaginas() {
+  return location.pathname.includes("/paginas/") ? "" : "paginas/";
 }
 
 function gizmoEjesSVG(tam = 22) {
@@ -38,11 +41,12 @@ function renderNavbar() {
   if (!contenedor) return;
 
   const base = rutaBase();
+  const basePaginas = rutaPaginas();
   const rutaActual = location.pathname.split("/").pop();
 
   const enlaces = ENLACES_NAV.map((e) => {
     const activo = e.href === rutaActual ? " activo" : "";
-    return `<li><a href="${e.href}" class="${activo.trim()}">${e.texto}</a></li>`;
+    return `<li><a href="${basePaginas}${e.href}" class="${activo.trim()}">${e.texto}</a></li>`;
   }).join("");
 
   contenedor.innerHTML = `
@@ -79,6 +83,7 @@ function renderFooter() {
   const contenedor = document.getElementById("footer-placeholder");
   if (!contenedor) return;
 
+  const basePaginas = rutaPaginas();
   const anio = new Date().getFullYear();
 
   contenedor.innerHTML = `
@@ -92,10 +97,10 @@ function renderFooter() {
           <div>
             <h4>Módulos</h4>
             <ul>
-              <li><a href="01-interfaz.html">Fundamentos</a></li>
-              <li><a href="04-materiales-texturas.html">Materiales</a></li>
-              <li><a href="08-render-vray-enscape.html">Render</a></li>
-              <li><a href="09-extensiones-ruby-api.html">Ruby API</a></li>
+              <li><a href="${basePaginas}01-interfaz.html">Fundamentos</a></li>
+              <li><a href="${basePaginas}04-materiales-texturas.html">Materiales</a></li>
+              <li><a href="${basePaginas}08-render-vray-enscape.html">Render</a></li>
+              <li><a href="${basePaginas}09-extensiones-ruby-api.html">Ruby API</a></li>
             </ul>
           </div>
           <div>
@@ -108,7 +113,7 @@ function renderFooter() {
           </div>
         </div>
         <div class="footer-app__base">
-          <span>© ${anio} SketchUp de Cero a Experto — proyecto educativo independiente.</span>
+          <span>&copy; ${anio} SketchUp de Cero a Experto — proyecto educativo independiente.</span>
           <span class="etiqueta-eje eje-z">Sitio en construcción</span>
         </div>
       </div>

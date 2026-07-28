@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="assets/css/variables.css">
 <link rel="stylesheet" href="assets/css/base.css">
 <link rel="stylesheet" href="assets/css/componentes.css">
+<link rel="stylesheet" href="assets/css/temas.css">
 
 <style>
   /* Estilos específicos de la portada */
@@ -365,6 +366,16 @@
     </div>
   </section>
 
+  <!-- GLOSARIO -->
+  <section class="seccion contenedor" id="glosario">
+    <div class="seccion__cabecera" data-aos="fade-up">
+      <span class="seccion__num">Referencia</span>
+      <h2>Glosario de términos</h2>
+      <p>Términos técnicos de SketchUp con su equivalente en inglés. Filtra por nombre o definición.</p>
+    </div>
+    <div id="glosario-contenedor"></div>
+  </section>
+
   <!-- CTA final -->
   <section class="contenedor" style="padding-bottom: var(--sp-24);">
     <div class="cta-final" data-aos="zoom-in">
@@ -388,7 +399,15 @@
 <script src="assets/js/componentes.js"></script>
 <script src="assets/js/tema.js"></script>
 <script src="assets/js/navegacion.js"></script>
+<script src="assets/js/busqueda.js"></script>
+<script src="assets/js/glosario.js"></script>
 <script src="assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderGlosarioFiltrable("glosario-contenedor");
+  });
+</script>
 
 </body>
 </html>
