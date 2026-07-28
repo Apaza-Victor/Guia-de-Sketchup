@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark light">
 <title>Recursos — SketchUp de Cero a Experto</title>
-<meta name="description" content="Recursos gratuitos para SketchUp: modelos 3D, texturas PBR, HDRIs, tutoriales, plugins y comunidades.">
+    <meta name="description" content="Recursos gratuitos para SketchUp: modelos 3D, texturas PBR, HDRIs, tutoriales, plugins, comunidades, atajos de teclado y consejos para trabajar más rápido.">
 <meta property="og:title" content="Recursos — SketchUp de Cero a Experto">
 <meta property="og:description" content="Recursos gratuitos: modelos 3D, texturas, HDRIs, tutoriales, plugins y comunidades.">
 <meta property="og:type" content="website">
@@ -148,6 +148,95 @@
     .seccion { padding-left: var(--sp-4); padding-right: var(--sp-4); }
     .grid-recursos { grid-template-columns: 1fr; }
     .recurso-categoria { padding: var(--sp-5); }
+    .tabla-atajos { font-size: var(--tam-xs); }
+    .tabla-atajos th, .tabla-atajos td { padding: var(--sp-2) var(--sp-3); }
+    .grid-tips { grid-template-columns: 1fr; }
+  }
+
+  /* Atajos de teclado */
+  .tabla-atajos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--tam-sm);
+  }
+  .tabla-atajos th {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--texto-suave);
+    text-align: left;
+    padding: var(--sp-3) var(--sp-4);
+    border-bottom: 2px solid var(--borde);
+    position: sticky;
+    top: 0;
+    background: var(--bg-alt);
+    z-index: 1;
+  }
+  .tabla-atajos td {
+    padding: var(--sp-3) var(--sp-4);
+    border-bottom: 1px solid var(--borde);
+    vertical-align: middle;
+  }
+  .tabla-atajos tr:last-child td { border-bottom: none; }
+  .tabla-atajos tr:hover td { background: color-mix(in srgb, var(--eje-z) 5%, transparent); }
+  .atajo-kbd {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-xs);
+    background: var(--bg);
+    border: 1px solid var(--borde);
+    border-bottom-width: 2px;
+    border-radius: var(--radio-sm);
+    padding: 0.15em 0.5em;
+    color: var(--eje-z);
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .atajo-categoria {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-xs);
+    color: var(--eje-x);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: var(--sp-4) var(--sp-4) var(--sp-2);
+    background: var(--bg-alt);
+    border-bottom: 1px dashed var(--borde);
+  }
+
+  /* Tips / Consejos */
+  .grid-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--sp-6);
+  }
+  .tip-card {
+    padding: var(--sp-6);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-lg);
+    background: var(--bg);
+    border-left: 3px solid var(--eje-y);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+  .tip-card__num {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-xs);
+    color: var(--eje-y);
+    letter-spacing: 0.05em;
+  }
+  .tip-card h4 {
+    font-size: var(--tam-md);
+    margin: 0;
+  }
+  .tip-card p {
+    font-size: var(--tam-sm);
+    color: var(--texto-suave);
+    margin: 0;
+    line-height: 1.6;
+  }
+  .tip-card code {
+    font-size: var(--tam-xs);
   }
 </style>
 </head>
@@ -382,6 +471,230 @@
           <p class="recurso-card__desc">La comunidad más activa de SketchUp. Plugins, tutoriales, gallery y soporte técnico.</p>
           <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sketchucation.com</span>
         </a>
+      </div>
+    </div>
+
+    <!-- Más sitios de recursos gratuitos -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="globe"></i>
+        <h3 style="margin:0;">Más recursos gratuitos</h3>
+      </div>
+      <div class="grid-recursos">
+        <a class="recurso-card" href="https://www.tinkercad.com" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="hammer"></i></div>
+            <span class="recurso-card__nombre">Tinkercad</span>
+          </div>
+          <p class="recurso-card__desc">Modelado 3D en el navegador. Ideal para principiantes y para exportar a SketchUp.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> tinkercad.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.blenderkit.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="paintbrush"></i></div>
+            <span class="recurso-card__nombre">BlenderKit</span>
+          </div>
+          <p class="recurso-card__desc">Biblioteca de materiales y modelos gratuitos. Muchos compatibles con SketchUp vía OBJ/FBX.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> blenderkit.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.hdrihaven.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="120">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="sun"></i></div>
+            <span class="recurso-card__nombre">HDRI Haven</span>
+          </div>
+          <p class="recurso-card__desc">HDRIs gratuitos de alta calidad para iluminación de escenas. Licencia CC0.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> hdrihaven.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.textures.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="180">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="layers"></i></div>
+            <span class="recurso-card__nombre">Textures.com</span>
+          </div>
+          <p class="recurso-card__desc">Miles de texturas gratuitas organizadas por categoría. Resolución hasta 4K.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> textures.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.quixel.com/megascans" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="mountain"></i></div>
+            <span class="recurso-card__nombre">Quixel Megascans</span>
+          </div>
+          <p class="recurso-card__desc">Escaneos fotogramétricos de alta calidad: rocas, vegetación, suelos. Gratis con Unreal Engine.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> quixel.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.cgaxis.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="armchair"></i></div>
+            <span class="recurso-card__nombre">CGAxis</span>
+          </div>
+          <p class="recurso-card__desc">Modelos 3D y vegetación para escenas arquitectónicas. Sección de modelos gratuitos.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> cgaxis.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Atajos de teclado -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="keyboard"></i>
+        <h3 style="margin:0;">Atajos de teclado</h3>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="tabla-atajos">
+          <thead>
+            <tr><th>Herramienta / Acción</th><th>Windows</th><th>Mac</th></tr>
+          </thead>
+          <tbody>
+            <!-- Navegación de cámara -->
+            <tr class="atajo-categoria"><td colspan="3">Navegación de cámara</td></tr>
+            <tr><td>Orbitar</td><td><span class="atajo-kbd">Botón medio</span></td><td><span class="atajo-kbd">Botón medio</span></td></tr>
+            <tr><td>Pan (desplazar)</td><td><span class="atajo-kbd">Shift + Botón medio</span></td><td><span class="atajo-kbd">Shift + Botón medio</span></td></tr>
+            <tr><td>Zoom</td><td><span class="atajo-kbd">Rueda del ratón</span></td><td><span class="atajo-kbd">Rueda del ratón</span></td></tr>
+            <tr><td>Zoom extents (ver todo)</td><td><span class="atajo-kbd">Shift + Z</span></td><td><span class="atajo-kbd">Shift + Z</span></td></tr>
+            <tr><td>Zoom ventana</td><td><span class="atajo-kbd">Z</span></td><td><span class="atajo-kbd">Z</span></td></tr>
+            <tr><td>Precedente</td><td><span class="atajo-kbd">F2</span></td><td><span class="atajo-kbd">Fn + F2</span></td></tr>
+            <tr><td>Siguiente</td><td><span class="atajo-kbd">F3</span></td><td><span class="atajo-kbd">Fn + F3</span></td></tr>
+            <tr><td>Estándar (ISO)</td><td><span class="atajo-kbd">F4</span></td><td><span class="atajo-kbd">Fn + F4</span></td></tr>
+
+            <!-- Dibujo -->
+            <tr class="atajo-categoria"><td colspan="3">Dibujo</td></tr>
+            <tr><td>Línea</td><td><span class="atajo-kbd">L</span></td><td><span class="atajo-kbd">L</span></td></tr>
+            <tr><td>Rectángulo</td><td><span class="atajo-kbd">R</span></td><td><span class="atajo-kbd">R</span></td></tr>
+            <tr><td>Círculo</td><td><span class="atajo-kbd">C</span></td><td><span class="atajo-kbd">C</span></td></tr>
+            <tr><td>Arco</td><td><span class="atajo-kbd">A</span></td><td><span class="atajo-kbd">A</span></td></tr>
+            <tr><td>Polígono</td><td><span class="atajo-kbd">-</span></td><td><span class="atajo-kbd">-</span></td></tr>
+            <tr><td>Mano libre</td><td><span class="atajo-kbd">Freehand</span></td><td><span class="atajo-kbd">Freehand</span></td></tr>
+
+            <!-- Edición -->
+            <tr class="atajo-categoria"><td colspan="3">Edición</td></tr>
+            <tr><td>Empujar / Tirar (Push/Pull)</td><td><span class="atajo-kbd">P</span></td><td><span class="atajo-kbd">P</span></td></tr>
+            <tr><td>Mover</td><td><span class="atajo-kbd">M</span></td><td><span class="atajo-kbd">M</span></td></tr>
+            <tr><td>Rotar</td><td><span class="atajo-kbd">Q</span></td><td><span class="atajo-kbd">Q</span></td></tr>
+            <tr><td>Escalar</td><td><span class="atajo-kbd">S</span></td><td><span class="atajo-kbd">S</span></td></tr>
+            <tr><td>Extruir (Follow Me)</td><td><span class="atajo-kbd">F</span></td><td><span class="atajo-kbd">F</span></td></tr>
+            <tr><td>Desplazar (Offset)</td><td><span class="atajo-kbd">O</span></td><td><span class="atajo-kbd">O</span></td></tr>
+            <tr><td>Medir / Cinta métrica</td><td><span class="atajo-kbd">T</span></td><td><span class="atajo-kbd">T</span></td></tr>
+            <tr><td>Borrar</td><td><span class="atajo-kbd">Suprimir</span></td><td><span class="atajo-kbd">Borrar</span></td></tr>
+
+            <!-- Selección -->
+            <tr class="atajo-categoria"><td colspan="3">Selección</td></tr>
+            <tr><td>Seleccionar</td><td><span class="atajo-kbd">Espacio</span></td><td><span class="atajo-kbd">Espacio</span></td></tr>
+            <tr><td>Agregar a selección</td><td><span class="atajo-kbd">Ctrl + clic</span></td><td><span class="atajo-kbd">Cmd + clic</span></td></tr>
+            <tr><td>Restar de selección</td><td><span class="atajo-kbd">Ctrl + Shift + clic</span></td><td><span class="atajo-kbd">Cmd + Shift + clic</span></td></tr>
+            <tr><td>Doble clic = cara + bordes</td><td><span class="atajo-kbd">Doble clic</span></td><td><span class="atajo-kbd">Doble clic</span></td></tr>
+            <tr><td>Triple clic = todo conectado</td><td><span class="atajo-kbd">Triple clic</span></td><td><span class="atajo-kbd">Triple clic</span></td></tr>
+
+            <!-- Grupos y componentes -->
+            <tr class="atajo-categoria"><td colspan="3">Grupos y componentes</td></tr>
+            <tr><td>Hacer grupo</td><td><span class="atajo-kbd">Ctrl + G</span></td><td><span class="atajo-kbd">Cmd + G</span></td></tr>
+            <tr><td>Hacer componente</td><td><span class="atajo-kbd">Ctrl + Shift + G</span></td><td><span class="atajo-kbd">Cmd + Option + G</span></td></tr>
+            <tr><td>Editar grupo/componente</td><td><span class="atajo-kbd">Doble clic</span></td><td><span class="atajo-kbd">Doble clic</span></td></tr>
+            <tr><td>Cerrar edición</td><td><span class="atajo-kbd">Esc</span></td><td><span class="atajo-kbd">Esc</span></td></tr>
+
+            <!-- Capas y escenas -->
+            <tr class="atajo-categoria"><td colspan="3">Capas y escenas</td></tr>
+            <tr><td>Panel de capas</td><td><span class="atajo-kbd">Windows &gt; Model Info</span></td><td><span class="atajo-kbd">Window &gt; Model Info</span></td></tr>
+            <tr><td>Agregar escena</td><td><span class="atajo-kbd">Menú Escenas</span></td><td><span class="atajo-kbd">Menú Scenes</span></td></tr>
+
+            <!-- Edición de vista -->
+            <tr class="atajo-categoria"><td colspan="3">Vista y render</td></tr>
+            <tr><td>Planta (Top)</td><td><span class="atajo-kbd">F5</span></td><td><span class="atajo-kbd">Fn + F5</span></td></tr>
+            <tr><td>Frontal</td><td><span class="atajo-kbd">F6</span></td><td><span class="atajo-kbd">Fn + F6</span></td></tr>
+            <tr><td>Lateral derecho</td><td><span class="atajo-kbd">F7</span></td><td><span class="atajo-kbd">Fn + F7</span></td></tr>
+            <tr><td>Posterior</td><td><span class="atajo-kbd">F8</span></td><td><span class="atajo-kbd">Fn + F8</span></td></tr>
+            <tr><td>Lateral izquierdo</td><td><span class="atajo-kbd">F9</span></td><td><span class="atajo-kbd">Fn + F9</span></td></tr>
+            <tr><td>Isométrico</td><td><span class="atajo-kbd">F10</span></td><td><span class="atajo-kbd">Fn + F10</span></td></tr>
+            <tr><td>Sombras on/off</td><td><span class="atajo-kbd">Shift + S</span></td><td><span class="atajo-kbd">Shift + S</span></td></tr>
+            <tr><td>Transparencia on/off</td><td><span class="atajo-kbd">T</span></td><td><span class="atajo-kbd">T</span></td></tr>
+
+            <!-- Utilidades -->
+            <tr class="atajo-categoria"><td colspan="3">Utilidades generales</td></tr>
+            <tr><td>Deshacer</td><td><span class="atajo-kbd">Ctrl + Z</span></td><td><span class="atajo-kbd">Cmd + Z</span></td></tr>
+            <tr><td>Rehacer</td><td><span class="atajo-kbd">Ctrl + Y</span></td><td><span class="atajo-kbd">Cmd + Y</span></td></tr>
+            <tr><td>Copiar</td><td><span class="atajo-kbd">Ctrl + C</span></td><td><span class="atajo-kbd">Cmd + C</span></td></tr>
+            <tr><td>Pegar</td><td><span class="atajo-kbd">Ctrl + V</span></td><td><span class="atajo-kbd">Cmd + V</span></td></tr>
+            <tr><td>Pegar en posición</td><td><span class="atajo-kbd">Ctrl + Shift + V</span></td><td><span class="atajo-kbd">Cmd + Shift + V</span></td></tr>
+            <tr><td>Seleccionar todo</td><td><span class="atajo-kbd">Ctrl + A</span></td><td><span class="atajo-kbd">Cmd + A</span></td></tr>
+            <tr><td>Invertir selección</td><td><span class="atajo-kbd">Ctrl + I</span></td><td><span class="atajo-kbd">Cmd + I</span></td></tr>
+            <tr><td>Ocultar selección</td><td><span class="atajo-kbd">H</span></td><td><span class="atajo-kbd">H</span></td></tr>
+            <tr><td>Mostrar todo</td><td><span class="atajo-kbd">Shift + H</span></td><td><span class="atajo-kbd">Shift + H</span></td></tr>
+            <tr><td>Bloquear selección</td><td><span class="atajo-kbd">Ctrl + L</span></td><td><span class="atajo-kbd">Cmd + L</span></td></tr>
+            <tr><td>Desbloquear todo</td><td><span class="atajo-kbd">Ctrl + Shift + L</span></td><td><span class="atajo-kbd">Cmd + Shift + L</span></td></tr>
+            <tr><td>Guardar</td><td><span class="atajo-kbd">Ctrl + S</span></td><td><span class="atajo-kbd">Cmd + S</span></td></tr>
+            <tr><td>Ajustes de modelo</td><td><span class="atajo-kbd">Ctrl + Shift + P</span></td><td><span class="atajo-kbd">Cmd + Shift + P</span></td></tr>
+            <tr><td>Imprimir</td><td><span class="atajo-kbd">Ctrl + P</span></td><td><span class="atajo-kbd">Cmd + P</span></td></tr>
+            <tr><td>Exportar imagen</td><td><span class="atajo-kbd">Archivo &gt; Exportar</span></td><td><span class="atajo-kbd">File &gt; Export</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Consejos y trucos -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="lightbulb"></i>
+        <h3 style="margin:0;">Consejos para trabajar más rápido</h3>
+      </div>
+      <div class="grid-tips">
+        <div class="tip-card" data-aos="fade-up">
+          <span class="tip-card__num">TIP 01</span>
+          <h4>Usa la inferencia inteligente</h4>
+          <p>SketchUp detecta automáticamente puntos finales, midpoints y ejes. Acércate a una esquina o borde y verás un punto de inferencia. Esto elimina la necesidad de medir todo manualmente.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="60">
+          <span class="tip-card__num">TIP 02</span>
+          <h4>Multiplica objetos con Move + Ctrl</h4>
+          <p>Selecciona un objeto, activa <code>M</code>, presiona <code>Ctrl</code> una vez para activar copia, mueve y escribe una cantidad (ej: <code>5x</code> o <code>3*</code>) para crear múltiples copias espaciadas automáticamente.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="120">
+          <span class="tip-card__num">TIP 03</span>
+          <h4>Push/Pull con doble clic</h4>
+          <p>Después de hacer un Push/Pull, doble clic sobre otra cara repite la misma extrusión. Esto ahorra tiempo al modelar elementos repetitivos como ventanas o escalones.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up">
+          <span class="tip-card__num">TIP 04</span>
+          <h4>Crea componentes desde el inicio</h4>
+          <p>Siempre convierte en componente lo que vayas a repetir (sillas, árboles, personas). Los componentes se actualizan en lote: editas uno y cambian todos. Ahorra horas de trabajo.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="60">
+          <span class="tip-card__num">TIP 05</span>
+          <h4>Usa las teclas de vista</h4>
+          <p>Presiona <code>F5</code> a <code>F10</code> para cambiar rápidamente entre vista planta, frontal, lateral e isométrico. Esencial para verificar proporciones desde todos los ángulos.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="120">
+          <span class="tip-card__num">TIP 06</span>
+          <h4>Offset para molduras y marcos</h4>
+          <p>La herramienta <code>O</code> (Offset) crea un borde paralelo a una cara. Perfecta para crear marcos de puertas, molduras, paredes con espesor y ventanas con un solo clic.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up">
+          <span class="tip-card__num">TIP 07</span>
+          <h4>Organiza con capas (tags)</h4>
+          <p>Usa capas desde el principio: mobiliario, estructura, iluminación, HVAC. Esto te permite ocultar categorías completas y trabajar más ligero en modelos complejos.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="60">
+          <span class="tip-card__num">TIP 08</span>
+          <h4>Usa escenas para presentar</h4>
+          <p>Crea escenas con diferentes ángulos y configuraciones de capas. Son ideales para presentar proyectos a clientes sin tener que navegar manualmente por el modelo.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="120">
+          <span class="tip-card__num">TIP 09</span>
+          <h4>Evita geometría suelta</h4>
+          <p>Las caras flotantes sin conectar causan problemas. Siempre verifica que toda geometría esté conectada o agrupada. Usa <code>Ctrl + I</code> para ver la selección completa.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up">
+          <span class="tip-card__num">TIP 10</span>
+          <h4>Follow Me en 2 pasos</h4>
+          <p>Para extruir a lo largo de una ruta: primero selecciona la ruta (borde o curva), luego activa Follow Me y haz clic en la cara a extruir. Mucho más rápido que arrastrar manualmente.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="60">
+          <span class="tip-card__num">TIP 11</span>
+          <h4>Back Edges para ver a través</h4>
+          <p>Presiona <code>K</code> para activar las aristas ocultas (dashed lines). Ideal para trabajar con geometría interna sin salir de la vista exterior.</p>
+        </div>
+        <div class="tip-card" data-aos="fade-up" data-aos-delay="120">
+          <span class="tip-card__num">TIP 12</span>
+          <h4>Guarda con regularidad</h4>
+          <p>SketchUp puede fallar en modelos muy pesados. Usa <code>Ctrl + S</code> frecuentemente y aprovecha las versiones automáticas de SketchUp (File &gt; Revert).</p>
+        </div>
       </div>
     </div>
 
