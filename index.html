@@ -223,13 +223,13 @@
   @media (max-width: 600px) { .ruta-modulos { grid-template-columns: 1fr 1fr; } }
 
   .ruta-card {
-    padding: var(--sp-5) var(--sp-5);
+    padding: var(--sp-6);
     border: 1px solid var(--borde);
     border-radius: var(--radio-lg);
     background: var(--bg-alt);
     display: flex;
     flex-direction: column;
-    gap: var(--sp-2);
+    gap: var(--sp-3);
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -246,6 +246,7 @@
     font-size: var(--tam-xs);
     color: var(--texto-suave);
     letter-spacing: 0.05em;
+    margin-bottom: var(--sp-1);
   }
   .ruta-card h4 {
     font-size: var(--tam-sm);
@@ -255,7 +256,7 @@
   .ruta-card p {
     font-size: var(--tam-xs);
     color: var(--texto-suave);
-    margin: 0;
+    margin: var(--sp-1) 0 0;
     line-height: 1.5;
   }
   .ruta-card__nivel {
