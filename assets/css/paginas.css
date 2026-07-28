@@ -8,20 +8,8 @@
   gap: var(--sp-12);
   align-items: start;
   padding-top: var(--sp-8);
-  max-width: 900px;
+  max-width: var(--ancho-max);
 }
-
-/* ---- Migas de pan ---- */
-.migas {
-  font-family: var(--fuente-mono);
-  font-size: var(--tam-xs);
-  color: var(--texto-suave);
-  margin-bottom: var(--sp-6);
-  display: flex; align-items: center; gap: var(--sp-2);
-  grid-column: 1 / -1;
-}
-.migas a { color: var(--texto-suave); }
-.migas a:hover { color: var(--eje-z); }
 
 /* ---- Contenido del módulo ---- */
 .contenido-modulo__cabecera { margin-bottom: var(--sp-8); }
@@ -237,20 +225,6 @@
 @media (max-width: 860px) {
   .diagrama-anotado { grid-template-columns: 1fr; }
 }
-
-/* ---- Breadcrumbs (enriquecimiento.js) ---- */
-.breadcrumbs {
-  font-family: var(--fuente-mono);
-  font-size: var(--tam-xs);
-  color: var(--texto-suave);
-  margin-bottom: var(--sp-4);
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-}
-.breadcrumbs a { color: var(--texto-suave); text-decoration: none; }
-.breadcrumbs a:hover { color: var(--eje-z); }
-.breadcrumbs span[aria-hidden] { opacity: 0.4; }
 
 /* ---- Tabla de contenidos (TOC) ---- */
 .toc {

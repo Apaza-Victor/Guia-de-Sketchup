@@ -291,6 +291,32 @@
   .footer-app__base { flex-direction: column; gap: var(--sp-2); align-items: flex-start; }
 }
 
+/* ---- Breadcrumbs (enriquecimiento.js) ---- */
+.breadcrumbs {
+  font-family: var(--fuente-mono);
+  font-size: var(--tam-xs);
+  color: var(--texto-suave);
+  margin-bottom: var(--sp-6);
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--bg-alt);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.breadcrumbs a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.breadcrumbs a:hover { color: var(--eje-z); }
+.breadcrumbs span[aria-hidden] { opacity: 0.4; margin: 0 var(--sp-1); }
+.breadcrumbs span[aria-current="page"] {
+  color: var(--texto);
+  font-weight: 500;
+}
+
 /* ---- Scroll-to-top ---- */
 .btn-scroll-top {
   position: fixed;

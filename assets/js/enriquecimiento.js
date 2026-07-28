@@ -125,9 +125,11 @@
     nav.setAttribute("aria-label", "Breadcrumb");
     nav.innerHTML = items.map((item, i) => {
       const esUltimo = i === items.length - 1;
-      return esUltimo
-        ? `<span aria-current="page">${item.texto}</span>`
-        : `<a href="${item.href}">${item.texto}</a><span aria-hidden="true">›</span>`;
+      if (esUltimo) {
+        return `<span aria-current="page">${item.texto}</span>`;
+      }
+      const icono = (i === 0) ? `<i data-lucide="home" style="width:14px;height:14px"></i> ` : "";
+      return `<a href="${item.href}">${icono}${item.texto}</a><span aria-hidden="true">›</span>`;
     }).join("");
 
     main.prepend(nav);
