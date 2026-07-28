@@ -1,6 +1,5 @@
 /**
  * main.js — punto de entrada. Inicializa librerías externas.
- * Se carga con `defer` después de componentes.js / tema.js / navegacion.js.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -28,12 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Sombra en navbar al hacer scroll
   const navbar = document.querySelector(".navbar-app");
   if (navbar) {
-    const observer = new IntersectionObserver(
-      ([entry]) => navbar.classList.toggle("scrolled", !entry.isIntersecting),
-      { threshold: 1, rootMargin: `-${parseInt(getComputedStyle(document.documentElement).getPropertyValue("--alto-navbar")) || 68}px 0px 0px 0px` }
-    );
-    observer.observe(document.createElement("span"));
-    // Fallback: listener directo
     window.addEventListener("scroll", () => {
       navbar.classList.toggle("scrolled", window.scrollY > 10);
     }, { passive: true });
