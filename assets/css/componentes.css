@@ -110,34 +110,62 @@
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  padding: 0.75rem 1.4rem;
+  padding: 0.8rem 1.6rem;
   border-radius: var(--radio-md);
   font-family: var(--fuente-cuerpo);
   font-weight: 600;
   font-size: var(--tam-sm);
-  border: 1.5px solid var(--tinta);
+  border: none;
   cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-plano--primario {
-  background: var(--tinta);
-  color: var(--papel);
+  background: linear-gradient(135deg, var(--eje-z), color-mix(in srgb, var(--eje-z) 80%, var(--eje-x)));
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(28, 109, 208, 0.25);
 }
 .btn-plano--primario:hover {
-  color: var(--papel);
-  box-shadow: 3px 3px 0 var(--eje-x);
-  transform: translate(-2px, -2px);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(28, 109, 208, 0.4);
+  transform: translateY(-2px);
+}
+.btn-plano--primario:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(28, 109, 208, 0.3);
 }
 
 .btn-plano--secundario {
   background: transparent;
   color: var(--texto);
+  border: 1.5px solid var(--borde);
 }
 .btn-plano--secundario:hover {
-  color: var(--texto);
-  box-shadow: 3px 3px 0 var(--eje-z);
-  transform: translate(-2px, -2px);
+  color: var(--eje-z);
+  border-color: var(--eje-z);
+  background: color-mix(in srgb, var(--eje-z) 6%, transparent);
+}
+.btn-plano--secundario:active {
+  background: color-mix(in srgb, var(--eje-z) 10%, transparent);
+}
+
+.btn-plano:focus-visible {
+  outline: 2px solid var(--eje-z);
+  outline-offset: 2px;
+}
+
+.btn-plano--fantasma {
+  background: none;
+  color: var(--texto-suave);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  font-size: var(--tam-xs);
+}
+.btn-plano--fantasma:hover {
+  color: var(--eje-z);
 }
 
 /* ---- Tarjeta de módulo ---- */

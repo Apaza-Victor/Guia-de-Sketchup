@@ -361,24 +361,6 @@
 .share-btn--x:hover { background: #1da1f2; border-color: #1da1f2; }
 .share-btn--li:hover { background: #0077b5; border-color: #0077b5; }
 
-/* ---- Botón imprimir ---- */
-.btn-imprimir {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-1);
-  background: none;
-  border: 1px dashed var(--borde);
-  border-radius: var(--radio-sm);
-  padding: var(--sp-1) var(--sp-3);
-  font-family: var(--fuente-mono);
-  font-size: var(--tam-xs);
-  color: var(--texto-suave);
-  cursor: pointer;
-  margin-left: auto;
-  transition: all 0.2s;
-}
-.btn-imprimir:hover { border-color: var(--eje-z); color: var(--eje-z); }
-
 /* ---- Barra de progreso en navbar ---- */
 .progress-bar-nav {
   position: fixed;

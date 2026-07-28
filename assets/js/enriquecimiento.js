@@ -240,19 +240,6 @@
     }
   }
 
-  /* ───────── Botón imprimir ───────── */
-  function renderPrintButton() {
-    if (!esPaginaModulo) return;
-    const meta = document.querySelector(".meta-lectura");
-    if (!meta) return;
-
-    const btn = document.createElement("button");
-    btn.className = "btn-imprimir";
-    btn.innerHTML = `<i data-lucide="printer" style="width:14px;height:14px"></i> Imprimir módulo`;
-    btn.addEventListener("click", () => window.print());
-    meta.appendChild(btn);
-  }
-
   /* ───────── Barra de progreso en navbar ───────── */
   function renderProgressBar() {
     const navbar = document.querySelector(".navbar-app");
@@ -279,7 +266,6 @@
     renderMetaLectura();
     renderNavModules();
     renderShareButtons();
-    renderPrintButton();
     renderProgressBar();
 
     if (window.lucide) lucide.createIcons();
