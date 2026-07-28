@@ -11,11 +11,12 @@
  */
 
 const ENLACES_NAV = [
+  { href: "modulos.html", texto: "Módulos" },
   { href: "01-interfaz.html", texto: "1. Interfaz" },
   { href: "02-herramientas-basicas.html", texto: "2. Herramientas" },
-  { href: "03-modelado-solidos.html", texto: "3. Modelado" },
   { href: "07-layout-documentacion.html", texto: "7. LayOut" },
-  { href: "08-render-vray-enscape.html", texto: "8. Render" },
+  { href: "funcionalidades.html", texto: "Funcionalidades" },
+  { href: "glosario.html", texto: "Glosario" },
 ];
 
 function rutaBase() {
@@ -100,7 +101,14 @@ function renderFooter() {
               <li><a href="${basePaginas}01-interfaz.html">Fundamentos</a></li>
               <li><a href="${basePaginas}04-materiales-texturas.html">Materiales</a></li>
               <li><a href="${basePaginas}08-render-vray-enscape.html">Render</a></li>
-              <li><a href="${basePaginas}09-extensiones-ruby-api.html">Ruby API</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Secciones</h4>
+            <ul>
+              <li><a href="${basePaginas}modulos.html">Todos los módulos</a></li>
+              <li><a href="${basePaginas}funcionalidades.html">Funcionalidades</a></li>
+              <li><a href="${basePaginas}glosario.html">Glosario</a></li>
             </ul>
           </div>
           <div>

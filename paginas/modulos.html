@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulos — SketchUp de Cero a Experto</title>
+<meta name="description" content="Explora los 10 módulos de la guía de SketchUp: interfaz, herramientas, modelado, materiales, capas, componentes, LayOut, render, extensiones y flujos profesionales.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/temas.css">
+
+<style>
+  .seccion { padding: var(--sp-24) var(--sp-6); width: 100%; max-width: none; }
+  .seccion > .seccion__cabecera,
+  .seccion > .grid-modulos,
+  .seccion > .franja-nivel {
+    max-width: var(--ancho-max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .seccion__cabecera { max-width: 620px; margin-bottom: var(--sp-12); }
+  .seccion__num {
+    font-family: var(--fuente-mono);
+    color: var(--eje-x);
+    font-size: var(--tam-sm);
+    display: block;
+    margin-bottom: var(--sp-2);
+  }
+  .grid-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-6);
+  }
+  .franja-nivel {
+    display: flex; align-items: center; gap: var(--sp-3);
+    margin: var(--sp-16) 0 var(--sp-8);
+  }
+  .franja-nivel::after { content:""; flex:1; border-top: 1px dashed var(--borde); }
+  .franja-nivel span {
+    font-family: var(--fuente-mono); font-size: var(--tam-xs);
+    text-transform: uppercase; letter-spacing: 0.08em; color: var(--texto-suave);
+  }
+  @media (max-width: 900px) {
+    .seccion { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+  }
+</style>
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido">
+
+  <section class="seccion" id="modulos">
+    <div class="seccion__cabecera" data-aos="fade-up">
+      <span class="seccion__num">Ruta de aprendizaje</span>
+      <h2>Diez módulos, de cero a experto</h2>
+      <p>Cada módulo combina teoría breve, diagramas, atajos de teclado y un quiz de repaso. Sigue el orden si eres principiante, o salta directo a lo que necesites.</p>
+    </div>
+
+    <div class="franja-nivel"><span>Nivel principiante</span></div>
+    <div class="grid-modulos">
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-x);" href="01-interfaz.html" data-aos="fade-up">
+        <span class="tarjeta-modulo__num">Módulo 01</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="layout-panel-left"></i></div>
+        <h3>Interfaz y navegación</h3>
+        <p>Ejes, orbitar, paneo, zoom y la anatomía de la pantalla de SketchUp.</p>
+        <div class="tarjeta-modulo__meta"><span>12 min</span><span>Sin prerrequisitos</span></div>
+      </a>
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-x);" href="02-herramientas-basicas.html" data-aos="fade-up" data-aos-delay="80">
+        <span class="tarjeta-modulo__num">Módulo 02</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="pencil-ruler"></i></div>
+        <h3>Herramientas básicas</h3>
+        <p>Línea, rectángulo, círculo, Empujar/Tirar, Seguir y Desplazar.</p>
+        <div class="tarjeta-modulo__meta"><span>18 min</span><span>Módulo 1</span></div>
+      </a>
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-x);" href="03-modelado-solidos.html" data-aos="fade-up" data-aos-delay="160">
+        <span class="tarjeta-modulo__num">Módulo 03</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="box"></i></div>
+        <h3>Modelado sólido</h3>
+        <p>Operaciones booleanas y edición de geometría compleja.</p>
+        <div class="tarjeta-modulo__meta"><span>22 min</span><span>Módulo 2</span></div>
+      </a>
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-x);" href="06-componentes-grupos.html" data-aos="fade-up" data-aos-delay="240">
+        <span class="tarjeta-modulo__num">Módulo 06</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="group"></i></div>
+        <h3>Grupos y componentes</h3>
+        <p>Organización de la geometría para modelos limpios y escalables.</p>
+        <div class="tarjeta-modulo__meta"><span>15 min</span><span>Módulo 3</span></div>
+      </a>
+    </div>
+
+    <div class="franja-nivel"><span>Nivel intermedio</span></div>
+    <div class="grid-modulos">
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-y);" href="04-materiales-texturas.html" data-aos="fade-up">
+        <span class="tarjeta-modulo__num">Módulo 04</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="palette"></i></div>
+        <h3>Materiales y texturas</h3>
+        <p>Aplicación, mapeo UV básico y edición de materiales.</p>
+        <div class="tarjeta-modulo__meta"><span>16 min</span><span>Módulo 3</span></div>
+      </a>
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-y);" href="05-capas-etiquetas.html" data-aos="fade-up" data-aos-delay="80">
+        <span class="tarjeta-modulo__num">Módulo 05</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="layers"></i></div>
+        <h3>Capas y etiquetas (tags)</h3>
+        <p>Organización por escenas y visibilidad de elementos.</p>
+        <div class="tarjeta-modulo__meta"><span>10 min</span><span>Módulo 3</span></div>
+      </a>
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-y);" href="07-layout-documentacion.html" data-aos="fade-up" data-aos-delay="160">
+        <span class="tarjeta-modulo__num">Módulo 07</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="file-text"></i></div>
+        <h3>LayOut — documentación técnica</h3>
+        <p>Planos, vistas, anotaciones y escalas para entrega profesional.</p>
+        <div class="tarjeta-modulo__meta"><span>25 min</span><span>Módulo 6</span></div>
+      </a>
+    </div>
+
+    <div class="franja-nivel"><span>Nivel avanzado</span></div>
+    <div class="grid-modulos">
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-z);" href="08-render-vray-enscape.html" data-aos="fade-up">
+        <span class="tarjeta-modulo__num">Módulo 08</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="sparkles"></i></div>
+        <h3>Render: V-Ray y Enscape</h3>
+        <p>Iluminación, materiales PBR y flujos de renderizado realista.</p>
+        <div class="tarjeta-modulo__meta"><span>30 min</span><span>Módulo 7</span></div>
+      </a>
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-z);" href="09-extensiones-ruby-api.html" data-aos="fade-up" data-aos-delay="80">
+        <span class="tarjeta-modulo__num">Módulo 09</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="puzzle"></i></div>
+        <h3>Extensiones y Ruby API</h3>
+        <p>Extension Warehouse y automatización básica con Ruby.</p>
+        <div class="tarjeta-modulo__meta"><span>28 min</span><span>Módulo 8</span></div>
+      </a>
+      <a class="tarjeta-modulo" style="--acento-modulo: var(--eje-z);" href="10-flujos-profesionales.html" data-aos="fade-up" data-aos-delay="160">
+        <span class="tarjeta-modulo__num">Módulo 10</span>
+        <div class="tarjeta-modulo__icono"><i data-lucide="briefcase"></i></div>
+        <h3>Flujos profesionales</h3>
+        <p>Arquitectura, interiorismo y un proyecto guiado de principio a fin.</p>
+        <div class="tarjeta-modulo__meta"><span>35 min</span><span>Todos</span></div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/busqueda.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>
