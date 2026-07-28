@@ -26,11 +26,19 @@
 <style>
   /* Estilos específicos de la portada */
   .hero {
-    padding: var(--sp-24) 0 var(--sp-16);
+    padding: var(--sp-24) var(--sp-6) var(--sp-16);
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: var(--sp-12);
     align-items: center;
+    width: 100%;
+    max-width: none;
+  }
+  @media (min-width: 1400px) {
+    .hero {
+      padding-left: calc((100vw - 1400px) / 2 + var(--sp-6));
+      padding-right: calc((100vw - 1400px) / 2 + var(--sp-6));
+    }
   }
 
   .hero__eyebrow {
@@ -120,7 +128,16 @@
   .etiqueta-flotante--ejes { bottom: 6%; left: 2%; color: var(--eje-z); }
 
   /* Secciones */
-  .seccion { padding: var(--sp-24) 0; }
+  .seccion { padding: var(--sp-24) var(--sp-6); width: 100%; max-width: none; }
+  .seccion > .seccion__cabecera,
+  .seccion > .grid-modulos,
+  .seccion > .franja-nivel,
+  .seccion > .grid-features,
+  .seccion > #glosario-contenedor {
+    max-width: var(--ancho-max);
+    margin-left: auto;
+    margin-right: auto;
+  }
   .seccion__cabecera { max-width: 620px; margin-bottom: var(--sp-12); }
   .seccion__num {
     font-family: var(--fuente-mono);
@@ -171,8 +188,9 @@
   .cta-final h2 { max-width: 20ch; margin-inline: auto; }
 
   @media (max-width: 900px) {
-    .hero { grid-template-columns: 1fr; padding-top: var(--sp-16); }
+    .hero { grid-template-columns: 1fr; padding-top: var(--sp-16); padding-left: var(--sp-4); padding-right: var(--sp-4); }
     .escena-cubo { order: -1; max-width: 320px; margin-inline: auto; }
+    .seccion { padding-left: var(--sp-4); padding-right: var(--sp-4); }
   }
 </style>
 </head>
@@ -184,7 +202,7 @@
 <main id="contenido">
 
   <!-- HERO -->
-  <section class="contenedor hero">
+  <section class="hero">
     <div data-aos="fade-up">
       <span class="hero__eyebrow">
         <span class="etiqueta-eje eje-x"></span> Guía en español · gratuita · sin cuenta
@@ -235,7 +253,7 @@
   </section>
 
   <!-- MÓDULOS -->
-  <section class="seccion contenedor" id="modulos">
+  <section class="seccion" id="modulos">
     <div class="seccion__cabecera" data-aos="fade-up">
       <span class="seccion__num">Ruta de aprendizaje</span>
       <h2>Diez módulos, de cero a experto</h2>
@@ -336,7 +354,7 @@
   </section>
 
   <!-- FUNCIONALIDADES -->
-  <section class="seccion contenedor">
+  <section class="seccion" id="herramientas">
     <div class="seccion__cabecera" data-aos="fade-up">
       <span class="seccion__num">Herramientas de estudio</span>
       <h2>Pensado para aprender, no solo para leer</h2>
@@ -367,7 +385,7 @@
   </section>
 
   <!-- GLOSARIO -->
-  <section class="seccion contenedor" id="glosario">
+  <section class="seccion" id="glosario">
     <div class="seccion__cabecera" data-aos="fade-up">
       <span class="seccion__num">Referencia</span>
       <h2>Glosario de términos</h2>
@@ -377,8 +395,8 @@
   </section>
 
   <!-- CTA final -->
-  <section class="contenedor" style="padding-bottom: var(--sp-24);">
-    <div class="cta-final" data-aos="zoom-in">
+  <section class="seccion" style="padding-bottom: var(--sp-24);">
+    <div class="cta-final" data-aos="zoom-in" style="max-width: var(--ancho-max); margin: 0 auto;">
       <h2>¿Listo para dejar de perderte en el eje azul?</h2>
       <p style="margin: var(--sp-4) 0 var(--sp-8);">Empieza por el Módulo 1 — no necesitas experiencia previa.</p>
       <a href="paginas/01-interfaz.html" class="btn-plano btn-plano--primario">

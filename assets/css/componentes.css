@@ -10,9 +10,13 @@
   height: var(--alto-navbar);
   display: flex;
   align-items: center;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(10px);
+  background: var(--bg);
   border-bottom: 1px solid var(--borde);
+  transition: box-shadow 0.2s ease;
+}
+
+.navbar-app.scrolled {
+  box-shadow: var(--sombra-media);
 }
 
 .navbar-app__interior {
