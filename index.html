@@ -141,6 +141,8 @@
 
   /* CTA */
   .seccion { padding: var(--sp-24) var(--sp-6); width: 100%; max-width: none; }
+  .seccion__inner { max-width: var(--ancho-max); margin: 0 auto; }
+  .seccion--full .seccion__inner { max-width: none; }
   .cta-final {
     text-align: center;
     padding: var(--sp-24) var(--sp-6);
@@ -223,7 +225,7 @@
 
   <!-- CTA final -->
   <section class="seccion" style="padding-bottom: var(--sp-24);">
-    <div class="cta-final" data-aos="zoom-in" style="max-width: var(--ancho-max); margin: 0 auto;">
+    <div class="cta-final" data-aos="zoom-in">
       <h2>¿Listo para dejar de perderte en el eje azul?</h2>
       <p style="margin: var(--sp-4) 0 var(--sp-8);">Empieza por el primer módulo — no necesitas experiencia previa.</p>
       <a href="paginas/01-interfaz.html" class="btn-plano btn-plano--primario">
@@ -234,7 +236,7 @@
 
   <!-- QUÉ ES SKETCHUP -->
   <section class="seccion" style="padding-top: 0;">
-    <div style="max-width: var(--ancho-max); margin: 0 auto;">
+    <div>
       <div style="display: grid; gap: var(--sp-4);" class="grid-2-col" data-aos="fade-up">
         <div>
           <span style="font-family: var(--fuente-mono); color: var(--eje-z); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">¿Qué es SketchUp?</span>
@@ -275,7 +277,7 @@
 
   <!-- CÓMO FUNCIONA LA GUÍA -->
   <section class="seccion" style="padding-top: 0;">
-    <div style="max-width: var(--ancho-max); margin: 0 auto;">
+    <div>
       <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
         <span style="font-family: var(--fuente-mono); color: var(--eje-x); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Metodología</span>
         <h2 style="font-size: var(--tam-xl);">Cómo funciona esta guía</h2>
@@ -308,7 +310,7 @@
 
   <!-- LO QUE APRENDERÁS -->
   <section class="seccion" style="padding-top: 0;">
-    <div style="max-width: var(--ancho-max); margin: 0 auto;">
+    <div>
       <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
         <span style="font-family: var(--fuente-mono); color: var(--eje-y); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Resultado final</span>
         <h2 style="font-size: var(--tam-xl);">Lo que sabrás al terminar</h2>
