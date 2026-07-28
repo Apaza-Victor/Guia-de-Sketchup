@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SketchUp de Cero a Experto — Guía completa en español</title>
 <meta name="description" content="Aprende SketchUp desde los fundamentos hasta flujos de render profesionales: interfaz, herramientas, modelado, materiales, LayOut, Ruby API y más.">
+<meta property="og:title" content="SketchUp de Cero a Experto — Guía completa en español">
+<meta property="og:description" content="Guía gratuita y completa para aprender SketchUp desde cero hasta nivel profesional. 10 módulos, quizzes interactivos, ejercicios prácticos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://apaza-victor.github.io/Guia-de-Sketchup/">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SketchUp de Cero a Experto">
+<meta name="twitter:description" content="Guía gratuita y completa para aprender SketchUp desde cero hasta nivel profesional.">
 
 <script>document.documentElement.setAttribute('data-tema', localStorage.getItem('sketchup-cde-tema') || 'oscuro');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,6 +83,11 @@
   .hero__stats strong { display:block; font-size: var(--tam-lg); font-family: var(--fuente-display); }
   .hero__stats span { font-size: var(--tam-xs); color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.05em; }
 
+  /* Responsive grids */
+  .grid-2-col { grid-template-columns: 1fr 1fr; }
+  .grid-3-col { grid-template-columns: repeat(3, 1fr); }
+  .grid-4-col { grid-template-columns: repeat(4, 1fr); }
+
   /* Escena isométrica animada */
   .escena-cubo {
     position: relative;
@@ -137,6 +150,15 @@
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; padding-top: var(--sp-16); padding-left: var(--sp-4); padding-right: var(--sp-4); }
     .escena-cubo { order: -1; max-width: 320px; margin-inline: auto; }
+    .grid-2-col { grid-template-columns: 1fr !important; }
+    .grid-4-col { grid-template-columns: 1fr 1fr !important; }
+    .grid-3-col { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    .grid-4-col { grid-template-columns: 1fr !important; }
+    .grid-3-col { grid-template-columns: 1fr !important; }
+    .hero__stats { gap: var(--sp-4); }
+    .hero__stats strong { font-size: var(--tam-md); }
   }
 </style>
 </head>
@@ -200,10 +222,121 @@
   <section class="seccion" style="padding-bottom: var(--sp-24);">
     <div class="cta-final" data-aos="zoom-in" style="max-width: var(--ancho-max); margin: 0 auto;">
       <h2>¿Listo para dejar de perderte en el eje azul?</h2>
-      <p style="margin: var(--sp-4) 0 var(--sp-8);">Empieza por el Módulo 1 — no necesitas experiencia previa.</p>
+      <p style="margin: var(--sp-4) 0 var(--sp-8);">Empieza por el primer módulo — no necesitas experiencia previa.</p>
       <a href="paginas/01-interfaz.html" class="btn-plano btn-plano--primario">
         <i data-lucide="arrow-right"></i> Empezar ahora
       </a>
+    </div>
+  </section>
+
+  <!-- QUÉ ES SKETCHUP -->
+  <section class="seccion" style="padding-top: 0;">
+    <div style="max-width: var(--ancho-max); margin: 0 auto;">
+      <div style="display: grid; gap: var(--sp-4);" class="grid-2-col" data-aos="fade-up">
+        <div>
+          <span style="font-family: var(--fuente-mono); color: var(--eje-z); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">¿Qué es SketchUp?</span>
+          <h2 style="font-size: var(--tam-xl); margin-bottom: var(--sp-4);">El modelado 3D más intuitivo que existe</h2>
+          <p>SketchUp es un software de modelado 3D desarrollado por Trimble que se usa en arquitectura, interiorismo, diseño de producto, escenografía, ingeniería y más. Su filosofía es simple: dibujar en 3D como si usaras un lápiz.</p>
+          <p>A diferencia de herramientas como Blender o 3ds Max, SketchUp prioriza la facilidad de uso sin sacrificar potencia. Con él puedes crear desde una silla hasta un edificio completo, y llevarlo a render fotorealista.</p>
+          <div style="display: flex; gap: var(--sp-6); margin-top: var(--sp-6); font-family: var(--fuente-mono); font-size: var(--tam-xs); color: var(--texto-suave);">
+            <span>✦ Gratuito para uso personal</span>
+            <span>✦ Disponible en Windows y Mac</span>
+            <span>✦ Comunidad activa global</span>
+          </div>
+        </div>
+        <div style="display: grid; gap: var(--sp-4);" class="grid-2-col">
+          <div style="padding: var(--sp-5); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt);">
+            <div style="color: var(--eje-x); margin-bottom: var(--sp-2);"><i data-lucide="ruler"></i></div>
+            <h4 style="font-size: var(--tam-sm); margin-bottom: var(--sp-1);">Precisión milimétrica</h4>
+            <p style="font-size: var(--tam-xs); margin: 0;">Modela con medidas reales desde el primer trazo.</p>
+          </div>
+          <div style="padding: var(--sp-5); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt);">
+            <div style="color: var(--eje-y); margin-bottom: var(--sp-2);"><i data-lucide="zap"></i></div>
+            <h4 style="font-size: var(--tam-sm); margin-bottom: var(--sp-1);">Curva de aprendizaje rápida</h4>
+            <p style="font-size: var(--tam-xs); margin: 0;">En pocas horas puedes modelar tu primer proyecto.</p>
+          </div>
+          <div style="padding: var(--sp-5); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt);">
+            <div style="color: var(--eje-z); margin-bottom: var(--sp-2);"><i data-lucide="plug"></i></div>
+            <h4 style="font-size: var(--tam-sm); margin-bottom: var(--sp-1);">Ecosistema de plugins</h4>
+            <p style="font-size: var(--tam-xs); margin: 0;">Miles de extensiones gratuitas para ampliar sus capacidades.</p>
+          </div>
+          <div style="padding: var(--sp-5); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt);">
+            <div style="color: var(--eje-x); margin-bottom: var(--sp-2);"><i data-lucide="monitor"></i></div>
+            <h4 style="font-size: var(--tam-sm); margin-bottom: var(--sp-1);">Render integrado</h4>
+            <p style="font-size: var(--tam-xs); margin: 0;">V-Ray y Enscape se integran directamente para renders realistas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA LA GUÍA -->
+  <section class="seccion" style="padding-top: 0;">
+    <div style="max-width: var(--ancho-max); margin: 0 auto;">
+      <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
+        <span style="font-family: var(--fuente-mono); color: var(--eje-x); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Metodología</span>
+        <h2 style="font-size: var(--tam-xl);">Cómo funciona esta guía</h2>
+        <p>No es solo lectura: cada módulo combina teoría, práctica y evaluación para que realmente aprendas.</p>
+      </div>
+      <div style="display: grid; gap: var(--sp-6);" class="grid-4-col" data-aos="fade-up">
+        <div style="text-align: center; padding: var(--sp-6);">
+          <div style="width: 56px; height: 56px; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; border-radius: 50%; background: color-mix(in srgb, var(--eje-x) 12%, transparent); color: var(--eje-x); font-family: var(--fuente-display); font-size: var(--tam-lg); font-weight: 700;">01</div>
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Teoría visual</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Diagramas SVG anotados, tablas de atajos y callouts con tips profesionales.</p>
+        </div>
+        <div style="text-align: center; padding: var(--sp-6);">
+          <div style="width: 56px; height: 56px; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; border-radius: 50%; background: color-mix(in srgb, var(--eje-y) 12%, transparent); color: var(--eje-y); font-family: var(--fuente-display); font-size: var(--tam-lg); font-weight: 700;">02</div>
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Mini-ejercicios</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Práctica guiada en SketchUp para reforzar cada concepto antes de avanzar.</p>
+        </div>
+        <div style="text-align: center; padding: var(--sp-6);">
+          <div style="width: 56px; height: 56px; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; border-radius: 50%; background: color-mix(in srgb, var(--eje-z) 12%, transparent); color: var(--eje-z); font-family: var(--fuente-display); font-size: var(--tam-lg); font-weight: 700;">03</div>
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Quiz de repaso</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">3 preguntas por módulo para verificar que entendiste los conceptos clave.</p>
+        </div>
+        <div style="text-align: center; padding: var(--sp-6);">
+          <div style="width: 56px; height: 56px; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; border-radius: 50%; background: color-mix(in srgb, var(--eje-x) 12%, transparent); color: var(--eje-x); font-family: var(--fuente-display); font-size: var(--tam-lg); font-weight: 700;">04</div>
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Progreso guardado</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Marca módulos completados y retoma donde dejaste sin crear cuenta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LO QUE APRENDERÁS -->
+  <section class="seccion" style="padding-top: 0;">
+    <div style="max-width: var(--ancho-max); margin: 0 auto;">
+      <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
+        <span style="font-family: var(--fuente-mono); color: var(--eje-y); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Resultado final</span>
+        <h2 style="font-size: var(--tam-xl);">Lo que sabrás al terminar</h2>
+        <p>Al completar los 10 módulos tendrás las habilidades necesarias para trabajar profesionalmente con SketchUp.</p>
+      </div>
+      <div style="display: grid; gap: var(--sp-6);" class="grid-3-col" data-aos="fade-up">
+        <div style="padding: var(--sp-6); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt); border-left: 3px solid var(--eje-x);">
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Modelado 3D completo</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Crear geometría compleja, sólidos, componentes dinámicos y organizar modelos limpios y escalables.</p>
+        </div>
+        <div style="padding: var(--sp-6); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt); border-left: 3px solid var(--eje-y);">
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Documentación técnica</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Generar planos, plantas, cortes y alzados con LayOut listos para entrega profesional al cliente.</p>
+        </div>
+        <div style="padding: var(--sp-6); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt); border-left: 3px solid var(--eje-z);">
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Renders fotorrealistas</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Configurar iluminación, materiales PBR y escenas con V-Ray o Enscape para presentar proyectos.</p>
+        </div>
+        <div style="padding: var(--sp-6); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt); border-left: 3px solid var(--eje-z);">
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Extensiones y automatización</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Instalar y usar plugins profesionales, y entender la Ruby API para automatizar tareas repetitivas.</p>
+        </div>
+        <div style="padding: var(--sp-6); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt); border-left: 3px solid var(--eje-y);">
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Flujos de trabajo reales</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Desde un proyecto arquitectónico hasta impresión 3D, con procesos profesionales paso a paso.</p>
+        </div>
+        <div style="padding: var(--sp-6); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt); border-left: 3px solid var(--eje-x);">
+          <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Atajos y productividad</h4>
+          <p style="font-size: var(--tam-sm); margin: 0;">Dominar atajos de teclado, herramientas de búsqueda y trucos para trabajar el doble de rápido.</p>
+        </div>
+      </div>
     </div>
   </section>
 

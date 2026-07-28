@@ -12,9 +12,9 @@
 
 const ENLACES_NAV = [
   { href: "modulos.html", texto: "Módulos" },
-  { href: "01-interfaz.html", texto: "1. Interfaz" },
-  { href: "02-herramientas-basicas.html", texto: "2. Herramientas" },
-  { href: "07-layout-documentacion.html", texto: "7. LayOut" },
+  { href: "01-interfaz.html", texto: "Interfaz" },
+  { href: "02-herramientas-basicas.html", texto: "Herramientas" },
+  { href: "07-layout-documentacion.html", texto: "LayOut" },
   { href: "funcionalidades.html", texto: "Funcionalidades" },
   { href: "glosario.html", texto: "Glosario" },
   { href: "recursos.html", texto: "Recursos" },
@@ -134,4 +134,20 @@ function renderFooter() {
 document.addEventListener("DOMContentLoaded", () => {
   renderNavbar();
   renderFooter();
+
+  const btnTop = document.createElement("button");
+  btnTop.className = "btn-scroll-top";
+  btnTop.setAttribute("aria-label", "Volver arriba");
+  btnTop.innerHTML = `<i data-lucide="chevron-up"></i>`;
+  document.body.appendChild(btnTop);
+
+  window.addEventListener("scroll", () => {
+    btnTop.classList.toggle("visible", window.scrollY > 400);
+  }, { passive: true });
+
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  if (window.lucide) lucide.createIcons();
 });
