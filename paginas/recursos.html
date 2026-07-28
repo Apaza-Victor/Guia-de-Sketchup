@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recursos — SketchUp de Cero a Experto</title>
+<meta name="description" content="Recursos gratuitos para SketchUp: modelos 3D, texturas PBR, HDRIs, tutoriales, plugins y comunidades.">
+
+<script>document.documentElement.setAttribute('data-tema', localStorage.getItem('sketchup-cde-tema') || 'oscuro');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/temas.css">
+
+<style>
+  .seccion { padding: var(--sp-24) var(--sp-6); width: 100%; max-width: none; }
+  .seccion > .seccion__cabecera,
+  .seccion > .grid-recursos {
+    max-width: var(--ancho-max);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .seccion__cabecera { max-width: 620px; margin-bottom: var(--sp-12); }
+  .seccion__num {
+    font-family: var(--fuente-mono);
+    color: var(--eje-x);
+    font-size: var(--tam-sm);
+    display: block;
+    margin-bottom: var(--sp-2);
+  }
+
+  .recurso-categoria { margin-bottom: var(--sp-16); }
+  .recurso-categoria__titulo {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    font-size: var(--tam-lg);
+    margin-bottom: var(--sp-6);
+    padding-bottom: var(--sp-3);
+    border-bottom: 1px dashed var(--borde);
+  }
+  .recurso-categoria__titulo svg { width: 22px; height: 22px; color: var(--eje-z); }
+
+  .grid-recursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-5);
+  }
+
+  .recurso-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    padding: var(--sp-5);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-lg);
+    background: var(--bg-alt);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+    color: var(--texto);
+  }
+  .recurso-card:hover {
+    border-color: var(--eje-z);
+    transform: translateY(-2px);
+    color: var(--texto);
+  }
+  .recurso-card__cabecera {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+  }
+  .recurso-card__icono {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radio-md);
+    background: color-mix(in srgb, var(--eje-z) 12%, transparent);
+    color: var(--eje-z);
+  }
+  .recurso-card__icono svg { width: 18px; height: 18px; }
+  .recurso-card__nombre {
+    font-family: var(--fuente-display);
+    font-weight: 600;
+    font-size: var(--tam-md);
+  }
+  .recurso-card__desc {
+    font-size: var(--tam-sm);
+    color: var(--texto-suave);
+    margin: 0;
+    flex: 1;
+  }
+  .recurso-card__etiqueta {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-xs);
+    color: var(--texto-suave);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-1);
+  }
+  .recurso-card__etiqueta svg { width: 12px; height: 12px; }
+
+  @media (max-width: 900px) {
+    .seccion { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+    .grid-recursos { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido">
+
+  <section class="seccion">
+    <div class="seccion__cabecera" data-aos="fade-up">
+      <span class="seccion__num">Biblioteca</span>
+      <h2>Recursos gratuitos</h2>
+      <p>Sitios web con modelos 3D, texturas PBR, HDRIs, tutoriales, plugins y comunidades para potenciar tus proyectos en SketchUp.</p>
+    </div>
+
+    <!-- Modelos 3D -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="box"></i>
+        <h3 style="margin:0;">Modelos 3D</h3>
+      </div>
+      <div class="grid-recursos">
+        <a class="recurso-card" href="https://3dwarehouse.sketchup.com" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="warehouse"></i></div>
+            <span class="recurso-card__nombre">3D Warehouse</span>
+          </div>
+          <p class="recurso-card__desc">Biblioteca oficial de Trimble. Millones de modelos SketchUp gratuitos: muebles, vegetación, personas, equipamiento.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sketchup.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.turbosquid.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="search"></i></div>
+            <span class="recurso-card__nombre">TurboSquid</span>
+          </div>
+          <p class="recurso-card__desc">Gran catálogo con miles de modelos gratuitos en formato SKP y otros. Filtros por polígonos y precio.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> turbosquid.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.cgtrader.com/free-3d-models/sketchup" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="120">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="layers"></i></div>
+            <span class="recurso-card__nombre">CGTrader</span>
+          </div>
+          <p class="recurso-card__desc">Modelos 3D gratuitos y de pago. Sección dedicada a SketchUp con muebles, arquitectura y escenas.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> cgtrader.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.sketchfab.com/search?features=downloadable&licenses=7c23a1ba438d4306920229c12afcb5f9&type=models&formats=skp" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="180">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="rotate-3d"></i></div>
+            <span class="recurso-card__nombre">Sketchfab</span>
+          </div>
+          <p class="recurso-card__desc">Visualizador 3D interactivo con miles de modelos descargables en formato SketchUp. Filtro por licencia CC.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sketchfab.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Texturas y materiales -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="palette"></i>
+        <h3 style="margin:0;">Texturas y materiales PBR</h3>
+      </div>
+      <div class="grid-recursos">
+        <a class="recurso-card" href="https://ambientCG.com" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="sun"></i></div>
+            <span class="recurso-card__nombre">ambientCG</span>
+          </div>
+          <p class="recurso-card__desc">Texturas PBR gratuitas en alta resolución (hasta 8K). Madera, concreto, metal, piedra y más. Licencia CC0.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> ambientcg.com</span>
+        </a>
+        <a class="recurso-card" href="https://polyhaven.com/textures" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="image"></i></div>
+            <span class="recurso-card__nombre">Poly Haven</span>
+          </div>
+          <p class="recurso-card__desc">Texturas, HDRIs y modelos 3D de calidad profesional. Todo gratuito con licencia CC0. Ideal para renders realistas.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> polyhaven.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.sketchuptexture.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="120">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="brush"></i></div>
+            <span class="recurso-card__nombre">SketchUp Texture</span>
+          </div>
+          <p class="recurso-card__desc">Texturas organizadas por categoría: suelos, paredes, techos, exteriores. Descarga directa en SKM para SketchUp.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sketchuptexture.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.sharetextures.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="180">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="grid-3x3"></i></div>
+            <span class="recurso-card__nombre">Share Textures</span>
+          </div>
+          <p class="recurso-card__desc">Texturas PBR gratuitas para arquitectura. Suelos de madera, piedra, mármol y cerámica en alta calidad.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sharetextures.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- HDRIs e iluminación -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="sun"></i>
+        <h3 style="margin:0;">HDRIs e iluminación</h3>
+      </div>
+      <div class="grid-recursos">
+        <a class="recurso-card" href="https://polyhaven.com/hdris" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="circle-dot"></i></div>
+            <span class="recurso-card__nombre">Poly Haven HDRIs</span>
+          </div>
+          <p class="recurso-card__desc">HDRIs gratuitos para iluminación de escenas. Exterior, interior, atardecer, nublado. Calidad hasta 16K.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> polyhaven.com</span>
+        </a>
+        <a class="recurso-card" href="https://ambientcg.com/tag/HDR" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="aperture"></i></div>
+            <span class="recurso-card__nombre">ambientCG HDRIs</span>
+          </div>
+          <p class="recurso-card__desc">Colección de HDRIs de ambientCG. Para uso con V-Ray, Enscape y otros motores de render.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> ambientcg.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Tutoriales y aprendizaje -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="graduation-cap"></i>
+        <h3 style="margin:0;">Tutoriales y aprendizaje</h3>
+      </div>
+      <div class="grid-recursos">
+        <a class="recurso-card" href="https://www.youtube.com/@TheSketchUpEssentials" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="play-circle"></i></div>
+            <span class="recurso-card__nombre">The SketchUp Essentials</span>
+          </div>
+          <p class="recurso-card__desc">Canal de YouTube con tutoriales completos: desde lo básico hasta plugins avanzados y flujo de trabajo profesional.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> youtube.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.sketchupuniversity.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="book-open"></i></div>
+            <span class="recurso-card__nombre">SketchUcation</span>
+          </div>
+          <p class="recurso-card__desc">Comunidad con tutoriales, foros activos, plugins gratuitos y cursos para todos los niveles.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sketchucation.com</span>
+        </a>
+        <a class="recurso-card" href="https://help.sketchup.com/es" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="120">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="help-circle"></i></div>
+            <span class="recurso-card__nombre">Documentación oficial</span>
+          </div>
+          <p class="recurso-card__desc">Ayuda oficial de SketchUp en español. Guías de herramientas,.solve troubleshoot y novedades de cada versión.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> help.sketchup.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.youtube.com/@SketchUp" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="180">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="video"></i></div>
+            <span class="recurso-card__nombre">Canal oficial SketchUp</span>
+          </div>
+          <p class="recurso-card__desc">Tutoriales oficiales de Trimble. Tips, workflows y presentaciones de nuevas funcionalidades.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> youtube.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Plugins y extensiones -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="puzzle"></i>
+        <h3 style="margin:0;">Plugins y extensiones</h3>
+      </div>
+      <div class="grid-recursos">
+        <a class="recurso-card" href="https://extensions.sketchup.com" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="puzzle"></i></div>
+            <span class="recurso-card__nombre">Extension Warehouse</span>
+          </div>
+          <p class="recurso-card__desc">Tienda oficial de extensiones SketchUp. Instalación directa desde la aplicación. Miles de plugins gratuitos.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> extensions.sketchup.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.sketchucation.com" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="download"></i></div>
+            <span class="recurso-card__nombre">SketchUcation Store</span>
+          </div>
+          <p class="recurso-card__desc">Plugins exclusivos y gratuitos: FredoScale, Joint Push Pull, Tools on Surface y muchos más.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sketchucation.com</span>
+        </a>
+        <a class="recurso-card" href="https://github.com/nicholaschiasson/sketchup-plugins" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="120">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="code"></i></div>
+            <span class="recurso-card__nombre">Plugins GitHub</span>
+          </div>
+          <p class="recurso-card__desc">Repositorios open source de plugins Ruby para SketchUp. Ideal para desarrolladores y personalización.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> github.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Comunidades -->
+    <div class="recurso-categoria" data-aos="fade-up">
+      <div class="recurso-categoria__titulo">
+        <i data-lucide="users"></i>
+        <h3 style="margin:0;">Comunidades y foros</h3>
+      </div>
+      <div class="grid-recursos">
+        <a class="recurso-card" href="https://forums.sketchup.com" target="_blank" rel="noopener" data-aos="fade-up">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="message-circle"></i></div>
+            <span class="recurso-card__nombre">Foros oficiales SketchUp</span>
+          </div>
+          <p class="recurso-card__desc">Foro oficial de Trimble. Resolución de dudas, consejos y discusiones con usuarios expertos.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> forums.sketchup.com</span>
+        </a>
+        <a class="recurso-card" href="https://www.reddit.com/r/SketchUp/" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="60">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="message-square"></i></div>
+            <span class="recurso-card__nombre">r/SketchUp</span>
+          </div>
+          <p class="recurso-card__desc">Comunidad de Reddit. Comparte proyectos, pide feedback y descubre tips diarios.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> reddit.com</span>
+        </a>
+        <a class="recurso-card" href="https://sketchucation.com/forums" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="120">
+          <div class="recurso-card__cabecera">
+            <div class="recurso-card__icono"><i data-lucide="users"></i></div>
+            <span class="recurso-card__nombre">Foro SketchUcation</span>
+          </div>
+          <p class="recurso-card__desc">La comunidad más activa de SketchUp. Plugins, tutoriales, gallery y soporte técnico.</p>
+          <span class="recurso-card__etiqueta"><i data-lucide="external-link"></i> sketchucation.com</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/busqueda.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+</body>
+</html>

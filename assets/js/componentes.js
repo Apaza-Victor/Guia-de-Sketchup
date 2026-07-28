@@ -17,6 +17,7 @@ const ENLACES_NAV = [
   { href: "07-layout-documentacion.html", texto: "7. LayOut" },
   { href: "funcionalidades.html", texto: "Funcionalidades" },
   { href: "glosario.html", texto: "Glosario" },
+  { href: "recursos.html", texto: "Recursos" },
 ];
 
 function rutaBase() {
@@ -109,6 +110,7 @@ function renderFooter() {
               <li><a href="${basePaginas}modulos.html">Todos los módulos</a></li>
               <li><a href="${basePaginas}funcionalidades.html">Funcionalidades</a></li>
               <li><a href="${basePaginas}glosario.html">Glosario</a></li>
+              <li><a href="${basePaginas}recursos.html">Recursos gratuitos</a></li>
             </ul>
           </div>
           <div>
