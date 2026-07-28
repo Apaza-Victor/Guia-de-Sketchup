@@ -22,10 +22,12 @@ function inicializarQuizzes() {
     const h2 = seccion.querySelector("h2");
     if (!h2) return;
 
+    const quizId = "quiz-" + Math.random().toString(36).slice(2, 8);
+    quizBox.id = quizId;
     h2.setAttribute("role", "button");
     h2.setAttribute("tabindex", "0");
     h2.setAttribute("aria-expanded", "false");
-    h2.setAttribute("aria-controls", "quiz-" + Math.random().toString(36).slice(2, 8));
+    h2.setAttribute("aria-controls", quizId);
 
     const toggleQuiz = () => {
       const abierta = seccion.classList.toggle("quiz-abierto");

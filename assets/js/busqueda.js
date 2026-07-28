@@ -142,7 +142,7 @@ function crearModalBusqueda() {
     sinResultados.style.display = "none";
 
     resultados.innerHTML = filtrados.map((item) => {
-      const iconos = { módulo: "book-open", herramienta: "wrench", herramienta: "wrench", concepto: "lightbulb", panel: "sidebar", atajo: "keyboard", extensión: "puzzle" };
+      const iconos = { módulo: "book-open", herramienta: "wrench", concepto: "lightbulb", panel: "sidebar", atajo: "keyboard", extensión: "puzzle" };
       const icono = iconos[item.tipo] || "file-text";
       return `
         <a href="${base}${item.url}" class="busqueda-item" style="

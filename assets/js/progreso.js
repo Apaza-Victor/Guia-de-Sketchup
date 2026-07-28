@@ -51,7 +51,7 @@ function renderSidebarModulos(idActual) {
     <nav class="sidebar-modulos" aria-label="Módulos del curso">
       <div class="sidebar-modulos__cabecera">
         <span>Módulos</span>
-        <span>${completados.length}/10</span>
+        <span>${completados.length}/${MODULOS.length}</span>
       </div>
       <ul>${items}</ul>
     </nav>

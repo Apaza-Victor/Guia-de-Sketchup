@@ -11,6 +11,7 @@ html {
 
 body {
   margin: 0;
+  padding-top: var(--alto-navbar);
   background-color: var(--bg);
   color: var(--texto);
   font-family: var(--fuente-cuerpo);
