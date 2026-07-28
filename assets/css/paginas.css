@@ -237,3 +237,173 @@
 @media (max-width: 860px) {
   .diagrama-anotado { grid-template-columns: 1fr; }
 }
+
+/* ---- Breadcrumbs (enriquecimiento.js) ---- */
+.breadcrumbs {
+  font-family: var(--fuente-mono);
+  font-size: var(--tam-xs);
+  color: var(--texto-suave);
+  margin-bottom: var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.breadcrumbs a { color: var(--texto-suave); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--eje-z); }
+.breadcrumbs span[aria-hidden] { opacity: 0.4; }
+
+/* ---- Tabla de contenidos (TOC) ---- */
+.toc {
+  background: var(--bg-alt);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  padding: var(--sp-5) var(--sp-6);
+  margin-bottom: var(--sp-8);
+}
+.toc__titulo {
+  font-size: var(--tam-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-suave);
+  margin-bottom: var(--sp-3);
+  font-family: var(--fuente-mono);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-2); }
+.toc li a {
+  font-size: var(--tam-sm);
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.toc li a::before {
+  content: "›";
+  color: var(--eje-z);
+  font-weight: 600;
+}
+.toc li a:hover { color: var(--eje-z); }
+
+/* ---- Meta lectura ---- */
+.meta-lectura {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  font-family: var(--fuente-mono);
+  font-size: var(--tam-xs);
+  color: var(--texto-suave);
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+}
+.meta-lectura__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+}
+
+/* ---- Nav módulos (anterior/siguiente) ---- */
+.nav-modulos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin: var(--sp-8) 0;
+}
+.nav-modulos a {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio-lg);
+  background: var(--bg-alt);
+  color: var(--texto);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.nav-modulos a:hover { border-color: var(--eje-z); }
+.nav-modulos__next a { justify-content: flex-end; text-align: right; }
+.nav-modulos small {
+  display: block;
+  font-family: var(--fuente-mono);
+  font-size: var(--tam-xs);
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---- Share buttons ---- */
+.share-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin: var(--sp-6) 0;
+}
+.share-buttons__label {
+  font-family: var(--fuente-mono);
+  font-size: var(--tam-xs);
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--borde);
+  background: var(--bg-alt);
+  color: var(--texto-suave);
+  transition: all 0.2s;
+}
+.share-btn:hover { color: #fff; }
+.share-btn--wa:hover { background: #25d366; border-color: #25d366; }
+.share-btn--x:hover { background: #1da1f2; border-color: #1da1f2; }
+.share-btn--li:hover { background: #0077b5; border-color: #0077b5; }
+
+/* ---- Botón imprimir ---- */
+.btn-imprimir {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  background: none;
+  border: 1px dashed var(--borde);
+  border-radius: var(--radio-sm);
+  padding: var(--sp-1) var(--sp-3);
+  font-family: var(--fuente-mono);
+  font-size: var(--tam-xs);
+  color: var(--texto-suave);
+  cursor: pointer;
+  margin-left: auto;
+  transition: all 0.2s;
+}
+.btn-imprimir:hover { border-color: var(--eje-z); color: var(--eje-z); }
+
+/* ---- Barra de progreso en navbar ---- */
+.progress-bar-nav {
+  position: fixed;
+  top: var(--alto-navbar);
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--borde);
+  z-index: 1001;
+}
+.progress-bar-nav__fill {
+  height: 100%;
+  background: var(--eje-z);
+  transition: width 0.4s ease;
+}
+.progress-bar-nav__label {
+  position: absolute;
+  right: var(--sp-4);
+  top: 4px;
+  font-family: var(--fuente-mono);
+  font-size: 10px;
+  color: var(--texto-suave);
+}
+
+@media (max-width: 600px) {
+  .nav-modulos { grid-template-columns: 1fr; }
+  .meta-lectura { flex-direction: column; align-items: flex-start; gap: var(--sp-2); }
+}

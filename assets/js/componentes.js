@@ -18,6 +18,7 @@ const ENLACES_NAV = [
   { href: "funcionalidades.html", texto: "Funcionalidades" },
   { href: "glosario.html", texto: "Glosario" },
   { href: "recursos.html", texto: "Recursos" },
+  { href: "certificado.html", texto: "Certificado" },
 ];
 
 function rutaBase() {
@@ -111,6 +112,7 @@ function renderFooter() {
               <li><a href="${basePaginas}funcionalidades.html">Funcionalidades</a></li>
               <li><a href="${basePaginas}glosario.html">Glosario</a></li>
               <li><a href="${basePaginas}recursos.html">Recursos gratuitos</a></li>
+              <li><a href="${basePaginas}certificado.html">Certificado</a></li>
             </ul>
           </div>
           <div>
