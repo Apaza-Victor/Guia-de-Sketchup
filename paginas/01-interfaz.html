@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 1 — Interfaz y navegación | SketchUp de Cero a Experto</title>
+<meta name="description" content="Aprende la interfaz de SketchUp: los tres ejes, navegación de cámara (orbitar, paneo, zoom), paneles principales y la barra de estado.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 1
+  </p>
+
+  <div class="layout-modulo">
+
+    <!-- Sidebar de módulos -->
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <!-- Contenido -->
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-x">Nivel principiante</span>
+          <span>·</span>
+          <span>12 min de lectura</span>
+        </div>
+        <h1>Interfaz y navegación</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          Antes de dibujar una sola línea, necesitas saber dónde estás parado. Este módulo cubre
+          la anatomía de la pantalla de SketchUp y las tres formas de moverte en el espacio 3D.
+        </p>
+      </header>
+
+      <!-- Introducción -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>La anatomía de la pantalla</h2>
+        <p>
+          SketchUp organiza todo alrededor de un único espacio de dibujo tridimensional. A diferencia
+          de un programa de dibujo 2D, aquí no "cambias de vista": giras una cámara alrededor de tu
+          modelo. Entender esto desde el principio evita el problema más común de los principiantes:
+          sentir que "se perdieron" dentro del modelo.
+        </p>
+
+        <div class="diagrama-anotado">
+          <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama de la interfaz de SketchUp con sus cinco áreas principales numeradas">
+            <rect x="10" y="10" width="480" height="300" rx="6" fill="none" stroke="var(--linea-plano-fuerte)" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+            <!-- toolbar -->
+            <rect x="10" y="10" width="480" height="28" fill="var(--bg)" stroke="var(--borde)"/>
+            <circle cx="24" cy="24" r="10" fill="var(--tinta)"/>
+            <text x="24" y="28" text-anchor="middle" font-size="10" fill="var(--papel)" font-family="var(--fuente-mono)">1</text>
+
+            <!-- viewport -->
+            <rect x="10" y="38" width="350" height="222" fill="var(--bg)" stroke="var(--borde)"/>
+            <circle cx="30" cy="58" r="10" fill="var(--tinta)"/>
+            <text x="30" y="62" text-anchor="middle" font-size="10" fill="var(--papel)" font-family="var(--fuente-mono)">2</text>
+
+            <!-- gizmo de ejes centrado en viewport -->
+            <g transform="translate(185,150)">
+              <circle r="3" fill="var(--tinta)"/>
+              <line x1="0" y1="0" x2="45" y2="0" stroke="var(--eje-x)" stroke-width="2.5"/>
+              <line x1="0" y1="0" x2="-25" y2="30" stroke="var(--eje-y)" stroke-width="2.5"/>
+              <line x1="0" y1="0" x2="0" y2="-40" stroke="var(--eje-z)" stroke-width="2.5"/>
+            </g>
+            <circle cx="150" cy="105" r="10" fill="var(--tinta)"/>
+            <text x="150" y="109" text-anchor="middle" font-size="10" fill="var(--papel)" font-family="var(--fuente-mono)">3</text>
+
+            <!-- panel derecho -->
+            <rect x="362" y="38" width="128" height="222" fill="var(--bg)" stroke="var(--borde)"/>
+            <rect x="372" y="48" width="108" height="60" fill="none" stroke="var(--borde)" stroke-dasharray="3 2"/>
+            <rect x="372" y="116" width="108" height="60" fill="none" stroke="var(--borde)" stroke-dasharray="3 2"/>
+            <rect x="372" y="184" width="108" height="60" fill="none" stroke="var(--borde)" stroke-dasharray="3 2"/>
+            <circle cx="480" cy="58" r="10" fill="var(--tinta)"/>
+            <text x="480" y="62" text-anchor="middle" font-size="10" fill="var(--papel)" font-family="var(--fuente-mono)">4</text>
+
+            <!-- status bar -->
+            <rect x="10" y="260" width="480" height="26" fill="var(--bg)" stroke="var(--borde)"/>
+            <circle cx="24" cy="273" r="10" fill="var(--tinta)"/>
+            <text x="24" y="277" text-anchor="middle" font-size="10" fill="var(--papel)" font-family="var(--fuente-mono)">5</text>
+          </svg>
+
+          <ol class="leyenda-diagrama">
+            <li><span class="num">1</span><div><strong>Barra de herramientas</strong><span>Accesos directos a las herramientas de dibujo y edición.</span></div></li>
+            <li><span class="num">2</span><div><strong>Área de dibujo (viewport)</strong><span>Tu espacio 3D. Todo lo que modelas vive aquí.</span></div></li>
+            <li><span class="num">3</span><div><strong>Gizmo de ejes</strong><span>Rojo = X, Verde = Y, Azul = Z. Tu referencia de orientación constante.</span></div></li>
+            <li><span class="num">4</span><div><strong>Bandeja de paneles</strong><span>Outliner, Entity Info, Materiales y Estilos.</span></div></li>
+            <li><span class="num">5</span><div><strong>Barra de estado</strong><span>Instrucciones contextuales de la herramienta activa.</span></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Los tres ejes -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Los tres ejes: tu brújula en 3D</h2>
+        <p>
+          SketchUp colorea cada dirección del espacio para que nunca pierdas la orientación,
+          incluso girando la cámara libremente:
+        </p>
+        <div class="grid-paneles">
+          <div class="panel-item" style="border-left: 3px solid var(--eje-x);">
+            <h4><span class="etiqueta-eje eje-x"></span> Eje X — Rojo</h4>
+            <p>Izquierda / derecha. El eje "ancho" del modelo.</p>
+          </div>
+          <div class="panel-item" style="border-left: 3px solid var(--eje-y);">
+            <h4><span class="etiqueta-eje eje-y"></span> Eje Y — Verde</h4>
+            <p>Adelante / atrás. El eje de "profundidad".</p>
+          </div>
+          <div class="panel-item" style="border-left: 3px solid var(--eje-z);">
+            <h4><span class="etiqueta-eje eje-z"></span> Eje Z — Azul</h4>
+            <p>Arriba / abajo. El eje de "altura".</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> cuando dibujas una línea y se pone de color rojo, verde o azul,
+          SketchUp te está confirmando que estás perfectamente alineado con ese eje. Ese "inferencing"
+          de color es la forma más confiable de dibujar con precisión.</p>
+        </div>
+      </section>
+
+      <!-- Navegación de cámara -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Navegación de cámara</h2>
+        <p>Tres movimientos cubren el 95% de tu navegación diaria:</p>
+
+        <table class="tabla-plano">
+          <thead>
+            <tr><th>Acción</th><th>Ratón (rueda)</th><th>Resultado</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Orbitar</strong></td>
+              <td>Botón central + arrastrar</td>
+              <td>Gira la cámara alrededor del modelo</td>
+            </tr>
+            <tr>
+              <td><strong>Paneo</strong></td>
+              <td><kbd>Mayús</kbd> + botón central + arrastrar</td>
+              <td>Desplaza la cámara sin rotarla</td>
+            </tr>
+            <tr>
+              <td><strong>Zoom</strong></td>
+              <td>Girar la rueda</td>
+              <td>Acerca o aleja la vista</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout--advertencia">
+          <i data-lucide="triangle-alert"></i>
+          <p><strong>Error común:</strong> si "pierdes" tu modelo de vista, no reinicies el archivo.
+          Usa <kbd>Zoom extensión</kbd> (icono de lupa con flechas) para que la cámara encuadre
+          automáticamente todo tu contenido.</p>
+        </div>
+      </section>
+
+      <!-- Paneles principales -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Paneles principales</h2>
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="list-tree"></i> Outliner</h4>
+            <p>Lista jerárquica de todos los grupos y componentes del modelo.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="info"></i> Entity Info</h4>
+            <p>Propiedades del elemento seleccionado: capa, material, nombre.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="palette"></i> Materiales</h4>
+            <p>Biblioteca de materiales para aplicar a las caras del modelo.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="brush"></i> Estilos</h4>
+            <p>Controla cómo se renderiza la vista: bordes, sombreado, fondo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos de teclado de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Acción</th><th>Windows</th><th>Mac</th></tr></thead>
+          <tbody>
+            <tr><td>Zoom extensión</td><td><kbd>Mayús</kbd>+<kbd>Z</kbd></td><td><kbd>⇧</kbd>+<kbd>Z</kbd></td></tr>
+            <tr><td>Vista isométrica</td><td><kbd>Ctrl</kbd>+<kbd>7</kbd></td><td><kbd>⌘</kbd>+<kbd>7</kbd></td></tr>
+            <tr><td>Órbita</td><td><kbd>O</kbd></td><td><kbd>O</kbd></td></tr>
+            <tr><td>Panear</td><td><kbd>H</kbd></td><td><kbd>H</kbd></td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="keyboard"></i>
+          <p><strong>Atajo pro:</strong> presiona las teclas de letra sin hacer clic en los íconos.
+          Casi todas las herramientas principales tienen un atajo de una sola letra.</p>
+        </div>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> abre SketchUp con un modelo de ejemplo y, sin usar
+          ninguna herramienta de dibujo, intenta orbitar, panear y hacer zoom hasta sentirte cómodo
+          navegando alrededor del objeto desde todos los ángulos.</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Qué color representa el eje Z (altura) en SketchUp?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Rojo</button>
+              <button class="quiz-opcion">Verde</button>
+              <button class="quiz-opcion">Azul</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Qué combinación se usa para panear la cámara?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Mayús + botón central + arrastrar</button>
+              <button class="quiz-opcion">Ctrl + clic izquierdo</button>
+              <button class="quiz-opcion">Alt + rueda del ratón</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Qué panel muestra la jerarquía de grupos y componentes?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Entity Info</button>
+              <button class="quiz-opcion">Outliner</button>
+              <button class="quiz-opcion">Estilos</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <!-- Navegación entre módulos -->
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="../index.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Inicio</span>
+          Volver al índice de módulos
+        </a>
+        <a href="02-herramientas-basicas.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 2 — Herramientas básicas
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("01");
+    inicializarBotonCompletado("01");
+  });
+</script>
+
+</body>
+</html>

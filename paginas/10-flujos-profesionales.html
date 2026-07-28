@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 10 — Flujos profesionales | SketchUp de Cero a Experto</title>
+<meta name="description" content="Flujos de trabajo profesionales con SketchUp: arquitectura, interiorismo, mobiliario, impresión 3D y un proyecto guiado completo de boceto a render final.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 10
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-z">Nivel avanzado</span>
+          <span>·</span>
+          <span>35 min de lectura</span>
+        </div>
+        <h1>Flujos profesionales</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          Todo lo que has aprendido se une aquí. Este módulo recorre los flujos de trabajo reales
+          que usan arquitectos, diseñadores de interiores y modeladores profesionales con SketchUp.
+        </p>
+      </header>
+
+      <!-- Flujo arquitectónico -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Flujo de trabajo arquitectónico</h2>
+        <p>
+          El flujo típico de un proyecto arquitectónico con SketchUp sigue estas fases:
+        </p>
+
+        <div class="diagrama-anotado">
+          <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama del flujo de trabajo arquitectónico con SketchUp">
+            <!-- Fase 1 -->
+            <rect x="5" y="30" width="80" height="70" rx="6" fill="var(--eje-z-suave)" stroke="var(--eje-z)" stroke-width="1.5"/>
+            <text x="45" y="60" text-anchor="middle" font-size="9" fill="var(--eje-z)" font-family="var(--fuente-mono)" font-weight="600">1. Boceto</text>
+            <text x="45" y="78" text-anchor="middle" font-size="8" fill="var(--texto-suave)" font-family="var(--fuente-mono)">Idea / Croquis</text>
+
+            <line x1="90" y1="65" x2="110" y2="65" stroke="var(--tinta)" stroke-width="1.5" marker-end="url(#flecha-pro)"/>
+
+            <!-- Fase 2 -->
+            <rect x="115" y="30" width="80" height="70" rx="6" fill="var(--eje-y-suave)" stroke="var(--eje-y)" stroke-width="1.5"/>
+            <text x="155" y="60" text-anchor="middle" font-size="9" fill="var(--eje-y)" font-family="var(--fuente-mono)" font-weight="600">2. Modelado</text>
+            <text x="155" y="78" text-anchor="middle" font-size="8" fill="var(--texto-suave)" font-family="var(--fuente-mono)">SketchUp 3D</text>
+
+            <line x1="200" y1="65" x2="220" y2="65" stroke="var(--tinta)" stroke-width="1.5" marker-end="url(#flecha-pro)"/>
+
+            <!-- Fase 3 -->
+            <rect x="225" y="30" width="80" height="70" rx="6" fill="var(--eje-x-suave)" stroke="var(--eje-x)" stroke-width="1.5"/>
+            <text x="265" y="60" text-anchor="middle" font-size="9" fill="var(--eje-x)" font-family="var(--fuente-mono)" font-weight="600">3. Materiales</text>
+            <text x="265" y="78" text-anchor="middle" font-size="8" fill="var(--texto-suave)" font-family="var(--fuente-mono)">Texturas / UV</text>
+
+            <line x1="310" y1="65" x2="330" y2="65" stroke="var(--tinta)" stroke-width="1.5" marker-end="url(#flecha-pro)"/>
+
+            <!-- Fase 4 -->
+            <rect x="335" y="30" width="75" height="70" rx="6" fill="var(--eje-z-suave)" stroke="var(--eje-z)" stroke-width="1.5"/>
+            <text x="372" y="60" text-anchor="middle" font-size="9" fill="var(--eje-z)" font-family="var(--fuente-mono)" font-weight="600">4. Render</text>
+            <text x="372" y="78" text-anchor="middle" font-size="8" fill="var(--texto-suave)" font-family="var(--fuente-mono)">V-Ray / Enscape</text>
+
+            <line x1="415" y1="65" x2="435" y2="65" stroke="var(--tinta)" stroke-width="1.5" marker-end="url(#flecha-pro)"/>
+
+            <!-- Fase 5 -->
+            <rect x="440" y="30" width="55" height="70" rx="6" fill="var(--eje-y-suave)" stroke="var(--eje-y)" stroke-width="1.5"/>
+            <text x="467" y="60" text-anchor="middle" font-size="9" fill="var(--eje-y)" font-family="var(--fuente-mono)" font-weight="600">5. Planos</text>
+            <text x="467" y="78" text-anchor="middle" font-size="8" fill="var(--texto-suave)" font-family="var(--fuente-mono)">LayOut</text>
+
+            <defs>
+              <marker id="flecha-pro" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--tinta)"/>
+              </marker>
+            </defs>
+          </svg>
+
+          <ol class="leyenda-diagrama">
+            <li><span class="num">1</span><div><strong>Boceto inicial</strong><span>Define la idea, las proporciones y la distribución espacial.</span></div></li>
+            <li><span class="num">2</span><div><strong>Modelado 3D</strong><span>Construye la geometría del proyecto en SketchUp con precisión.</span></div></li>
+            <li><span class="num">3</span><div><strong>Materiales y texturas</strong><span>Aplica acabados reales: madera, piedra, vidrio, metal.</span></div></li>
+            <li><span class="num">4</span><div><strong>Render</strong><span>Genera imágenes fotorrealistas para presentación al cliente.</span></div></li>
+            <li><span class="num">5</span><div><strong>Planos técnicos</strong><span>Documenta con LayOut: plantas, alzados, secciones y detalles.</span></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Interiorismo -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Interiorismo con SketchUp</h2>
+        <p>
+          El diseño de interiores tiene necesidades específicas que SketchUp cubre muy bien:
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="ruler"></i> Medición precisa</h4>
+            <p>Dibuja paredes, puertas y ventanas con dimensiones reales desde el primer trazo.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="armchair"></i> Bibliotecas de componentes</h4>
+            <p>3D Warehouse tiene miles de muebles reales de fabricantes (IKEA, Herman Miller...).</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="palette"></i> Materiales de acabado</h4>
+            <p>Aplica laminados, pinturas, textiles y suelos con texturas de alta resolución.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="sun"></i> Iluminación natural</h4>
+            <p>Simula la luz del sol en diferentes horas para estudiar iluminación interior.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip para interiores:</strong> usa el estilo "Hidden Line" con fondo blanco para
+          planos de distribución (planos de planta). Guarda una escena con este estilo y úsala en
+          LayOut para planos técnicos limpios.</p>
+        </div>
+      </section>
+
+      <!-- Impresión 3D -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>SketchUp para impresión 3D</h2>
+        <p>
+          SketchUp es una herramienta excelente para diseñar piezas destinadas a impresión 3D.
+          La clave es crear geometría "sólida" (watertight) sin caras invertidas ni bordes sueltos.
+        </p>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Requisito</th><th>Cómo verificarlo en SketchUp</th></tr></thead>
+          <tbody>
+            <tr><td>Geometría sólida</td><td>Seleccionar grupo → Entity Info → debe decir "Solid Group"</td></tr>
+            <tr><td>Sin caras invertidas</td><td>Verificar que las caras azules queden hacia dentro</td></tr>
+            <tr><td>Espesor mínimo</td><td>Las paredes deben tener al menos 1-2mm de grosor</td></tr>
+            <tr><td>Sin geometría superpuesta</td><td>Usar "Solid Inspector" (extensión gratuita) para detectar errores</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="keyboard"></i>
+          <p><strong>Extensión recomendada:</strong> "Solid Inspector" by ThomThom detecta y corrige
+          automáticamente problemas de geometría para impresión 3D. Gratis en Extension Warehouse.</p>
+        </div>
+      </section>
+
+      <!-- Proyecto guiado: resumen -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Proyecto guiado: de boceto a render</h2>
+        <p>
+          A continuación tienes el resumen de un proyecto completo paso a paso. Este ejercicio
+          integra todos los módulos del curso:
+        </p>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Paso</th><th>Acción</th><th>Módulos usados</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>Crea un rectángulo de 10×8m como base de la casa</td><td>Módulo 2 (Rectángulo)</td></tr>
+            <tr><td>2</td><td>Extruye las paredes con Empujar/Tirar (2.7m de alto)</td><td>Módulo 2 (Push/Pull)</td></tr>
+            <tr><td>3</td><td>Crea puertas y ventanas con Offset + Push/Pull</td><td>Módulo 2 (Offset)</td></tr>
+            <tr><td>4</td><td>Agrupa cada pared, techo y hueco por separado</td><td>Módulo 6 (Grupos)</td></tr>
+            <tr><td>5</td><td>Crea una ventana como componente y duplícala</td><td>Módulo 6 (Componentes)</td></tr>
+            <tr><td>6</td><td>Asigna capas a exteriores, interiores y mobiliario</td><td>Módulo 5 (Capas/Tags)</td></tr>
+            <tr><td>7</td><td>Aplica materiales: ladrillo, madera, vidrio</td><td>Módulo 4 (Materiales)</td></tr>
+            <tr><td>8</td><td>Crea escenas de planta, alzado y perspectiva</td><td>Módulo 7 (Escenas)</td></tr>
+            <tr><td>9</td><td>Renderiza la perspectiva con iluminación solar</td><td>Módulo 8 (Render)</td></tr>
+            <tr><td>10</td><td>Genera planos técnicos en LayOut con cotas</td><td>Módulo 7 (LayOut)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Consejos finales -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Consejos para trabajar profesionalmente</h2>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Organiza desde el día 1:</strong> nombra tus grupos, usa capas desde el inicio
+          y mantén una estructura limpia en Outliner. Un modelo desorganizado cuesta horas de
+          trabajo extra.</p>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Crea plantillas:</strong> guarda un archivo .skp con tu configuración de estilos,
+          capas y escenas favoritas. Úsalo como punto de partida para cada proyecto nuevo.</p>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Versiona tus archivos:</strong> guarda copias con fecha (casa_v01.skp, casa_v02.skp).
+          SketchUp no tiene control de versiones como Git.</p>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Aprende continuamente:</strong> la comunidad de SketchUp es enorme. Canales de
+          YouTube como "The SketchUp Essentials" o foros como SketchUcation son recursos inagotables.</p>
+        </div>
+      </section>
+
+      <!-- Atajos finales -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos de teclado esenciales (resumen final)</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Atajo</th><th>Acción</th></tr></thead>
+          <tbody>
+            <tr><td><kbd>L</kbd></td><td>Línea</td></tr>
+            <tr><td><kbd>R</kbd></td><td>Rectángulo</td></tr>
+            <tr><td><kbd>C</kbd></td><td>Círculo</td></tr>
+            <tr><td><kbd>P</kbd></td><td>Empujar/Tirar</td></tr>
+            <tr><td><kbd>F</kbd></td><td>Desplazar (Offset)</td></tr>
+            <tr><td><kbd>M</kbd></td><td>Mover</td></tr>
+            <tr><td><kbd>Q</kbd></td><td>Rotar</td></tr>
+            <tr><td><kbd>S</kbd></td><td>Escalar</td></tr>
+            <tr><td><kbd>O</kbd></td><td>Órbita</td></tr>
+            <tr><td><kbd>H</kbd></td><td>Panear</td></tr>
+            <tr><td><kbd>Z</kbd></td><td>Zoom</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td><td>Deshacer</td></tr>
+            <tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd></td><td>Crear grupo</td></tr>
+            <tr><td><kbd>G</kbd></td><td>Crear componente</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso final</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Cuál es el primer paso al trabajar en un proyecto arquitectónico con SketchUp?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Aplicar materiales</button>
+              <button class="quiz-opcion">Definir la geometría base con medidas reales</button>
+              <button class="quiz-opcion">Renderizar una perspectiva</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Qué extensión se recomienda para verificar geometría sólida para impresión 3D?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Joint Push Pull</button>
+              <button class="quiz-opcion">FredoScale</button>
+              <button class="quiz-opcion">Solid Inspector</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Qué significa que un grupo es "Solid Group" en Entity Info?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Es apto para impresión 3D y operaciones booleanas</button>
+              <button class="quiz-opcion">Tiene materiales aplicados</button>
+              <button class="quiz-opcion">Está bloqueado para edición</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <section class="bloque-contenido" data-aos="fade-up" style="text-align:center; margin-top: var(--sp-16);">
+        <div class="callout callout--tip" style="justify-content:center; text-align:center;">
+          <i data-lucide="trophy"></i>
+          <p><strong>Has completado "SketchUp de Cero a Experto"</strong><br>
+          Ya tienes las bases para modelar, documentar y renderizar proyectos profesionales.
+          Lo que sigue es practicar, explorar extensiones y desarrollar tu propio flujo de trabajo.</p>
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="09-extensiones-ruby-api.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 9 — Extensiones y Ruby API
+        </a>
+        <a href="../index.html" class="siguiente">
+          <span class="direccion">Volver al inicio <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Índice de módulos
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("10");
+    inicializarBotonCompletado("10");
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 8 — Render: V-Ray y Enscape | SketchUp de Cero a Experto</title>
+<meta name="description" content="Aprende a renderizar en SketchUp con V-Ray y Enscape: iluminación, materiales PBR, configuración de cámara y flujos de renderizado realista.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 8
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-z">Nivel avanzado</span>
+          <span>·</span>
+          <span>30 min de lectura</span>
+        </div>
+        <h1>Render: V-Ray y Enscape</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          El modelado es solo la estructura. El renderizado le da vida: sombras reales, materiales
+          fotorrealistas e iluminación que convierte tu modelo en una imagen impactante.
+        </p>
+      </header>
+
+      <!-- ¿Qué es el render? -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>¿Qué es el renderizado?</h2>
+        <p>
+          Renderizar es el proceso de calcular cómo la luz interactúa con los materiales de tu
+          modelo para generar una imagen fotorrealista. SketchUp incluye un render básico, pero
+          para resultados profesionales necesitas un motor de render externo.
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item" style="border-left: 3px solid var(--eje-z);">
+            <h4><i data-lucide="sparkles"></i> V-Ray</h4>
+            <p>El estándar de la industria. Render offline con control total sobre iluminación, materiales y calidad. Más lento pero máxima calidad.</p>
+          </div>
+          <div class="panel-item" style="border-left: 3px solid var(--eje-y);">
+            <h4><i data-lucide="zap"></i> Enscape</h4>
+            <p>Render en tiempo real integrado directamente en SketchUp. Rápido, fácil de usar, ideal para presentaciones interactivas.</p>
+          </div>
+          <div class="panel-item" style="border-left: 3px solid var(--eje-x);">
+            <h4><i data-lucide="monitor"></i> Twinmotion</h4>
+            <p>Render en tiempo real gratuito para proyectos < 100K€. Buena calidad con poco esfuerzo. Sincronización directa con SketchUp.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- V-Ray: conceptos clave -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>V-Ray: conceptos clave</h2>
+
+        <h3>Iluminación</h3>
+        <p>
+          V-Ray simula la luz de forma físicamente precisa. La iluminación se divide en dos fuentes principales:
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="sun"></i> Luz solar (V-Ray Sun)</h4>
+            <p>Luz direacional que simula el sol real. Controla hora del día, nubosidad y sombras. Se configura en el panel de Environment.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="lamp-floor"></i> Luces artificiales</h4>
+            <p>Diferentes tipos: Rectangular (ventanas), Esférica (faroles), Spot (proyectores), IES (perfiles reales de fabricantes).</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> la iluminación natural (sol + cielo) es el punto de partida más
+          importante. Un buen render Exterior puede lograrse solo con V-Ray Sun. Para interiores,
+          complementa con luces artificiales donde haya lámparas o luminarias.</p>
+        </div>
+
+        <h3>Materiales PBR</h3>
+        <p>
+          PBR (Physically Based Rendering) es un modelo de materiales que simula cómo la luz
+          interactúa con las superficies reales. Los parámetros clave son:
+        </p>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Parámetro</th><th>Qué controla</th><th>Ejemplo</th></tr></thead>
+          <tbody>
+            <tr><td>Diffuse Color</td><td>Color base del material</td><td>Rojo para ladrillo</td></tr>
+            <tr><td>Roughness</td><td>Cuán mate o brillante es la superficie</td><td>0 = espejo, 1 = completamente mate</td></tr>
+            <tr><td>Metalness</td><td>Si el material es metálico o no</td><td>1 para acero, 0 para madera</td></tr>
+            <tr><td>Normal Map</td><td>Detalles de relieve sin增加 geometría</td><td>Textura de piedra con superficie irregular</td></tr>
+            <tr><td>Opacity</td><td>Transparencia del material</td><td>Vidrio, agua</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Enscape: flujo rápido -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Enscape: render en tiempo real</h2>
+        <p>
+          Enscape se integra como un plugin dentro de SketchUp. Al abrirlo, ves una ventana en
+          tiempo real de tu modelo con iluminación, materiales y vegetación. Es ideal para:
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="play"></i> Presentaciones en vivo</h4>
+            <p>Muestra tu modelo al cliente con navegación en tiempo real, sin esperar renders.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="camera"></i> Renders rápidos</h4>
+            <p>Exporta imágenes de alta calidad en segundos, sin configuración compleja.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="video"></i> Videos y recorridos</h4>
+            <p>Crea recorridos animados por tu modelo con movimiento de cámara suave.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="globe"></i> Realidad virtual</h4>
+            <p>Exporta a VR para que el cliente camine dentro de tu modelo con gafas.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="keyboard"></i>
+          <p><strong>Nota:</strong> Enscape funciona como plugin independiente. Una vez instalado,
+          verás una pestaña "Enscape" en la cinta de opciones de SketchUp con todos los controles.</p>
+        </div>
+      </section>
+
+      <!-- Configuración de cámara -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Configuración de cámara</h2>
+        <p>
+          La cámara define cómo se ve tu render. Los parámetros más importantes son:
+        </p>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Parámetro</th><th>Qué hace</th><th>Consejo</th></tr></thead>
+          <tbody>
+            <tr><td>Field of View (FOV)</td><td>Cuánto ve la cámara (ángulo)</td><td>60°-80° para interiores, 35°-50° para exteriores</td></tr>
+            <tr><td>Exposure</td><td>Cuán brillante o oscuro es el render</td><td>Ajustar según la iluminación de la escena</td></tr>
+            <tr><td>Depth of Field</td><td>Efecto de desenfoque (bokeh)</td><td>Úsalo con moderación para focalizar atención</td></tr>
+            <tr><td>White Balance</td><td>Temperatura de color</td><td>6500K = neutral, más bajo = cálido, más alto = frío</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Consejos para buenos renders -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Consejos para un buen render</h2>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>1. Composición primero:</strong> antes de tocar materiales o luces, compón tu
+          imagen. Busca un ángulo que cuente la historia del espacio.</p>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>2. Iluminación natural:</strong> empieza siempre con la luz del sol. Ajusta la
+          hora del día hasta que las sombras realcen la composición.</p>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>3. Materiales simples:</strong> no necesitas 50 tipos de madera. 3-4 materiales
+          bien configurados se ven mejor que 20 materiales genéricos.</p>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>4. Iteración:</strong> renderiza, ajusta, renderiza de nuevo. Los mejores renders
+          pasan por múltiples revisiones.</p>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos y comandos de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Acción</th><th>V-Ray</th><th>Enscape</th></tr></thead>
+          <tbody>
+            <tr><td>Abrir editor de materiales</td><td>V-Ray Asset Editor</td><td>Material Editor (en pestaña Enscape)</td></tr>
+            <tr><td>Iniciar render</td><td>Teapot icon / Ctrl+R</td><td>Start (botón en toolbar Enscape)</td></tr>
+            <tr><td>Render interactivo</td><td>IPR (Interactive)</td><td>Siempre interactivo por defecto</td></tr>
+            <tr><td>Ajustes de calidad</td><td>V-Ray Settings → Quality</td><td>Visual Settings → Rendering</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> abre un modelo de interior en SketchUp con V-Ray o Enscape
+          instalado. Aplica un material de madera al suelo, uno de vidrio a las ventanas, y renderiza
+          con iluminación solar. Ajusta la hora del día para encontrar la mejor composición de sombras.</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Qué motor de render se integra directamente en SketchUp con vista en tiempo real?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">V-Ray</button>
+              <button class="quiz-opcion">Enscape</button>
+              <button class="quiz-opcion">Lumion</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Qué parámetro PBR controla cuán brillante o mate es una superficie?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Roughness</button>
+              <button class="quiz-opcion">Metalness</button>
+              <button class="quiz-opcion">Opacity</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Qué rango de FOV (Field of View) se recomienda para interiores?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">20°-30°</button>
+              <button class="quiz-opcion">100°-120°</button>
+              <button class="quiz-opcion">60°-80°</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="07-layout-documentacion.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 7 — LayOut
+        </a>
+        <a href="09-extensiones-ruby-api.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 9 — Extensiones
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("08");
+    inicializarBotonCompletado("08");
+  });
+</script>
+
+</body>
+</html>

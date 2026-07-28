@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Base — reset ligero, tipografía global, fondo de "papel de plano"
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--alto-navbar) + 16px);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--texto);
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--tam-base);
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+
+  /* Cuadrícula sutil de "papel milimetrado" técnico */
+  background-image:
+    linear-gradient(var(--linea-plano) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linea-plano) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: -1px -1px;
+  background-attachment: fixed;
+}
+
+[data-tema="oscuro"] body {
+  background-image:
+    linear-gradient(var(--linea-plano) 1px, transparent 1px),
+    linear-gradient(90deg, var(--linea-plano) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--sp-4);
+  color: var(--texto);
+}
+
+h1 { font-size: var(--tam-3xl); }
+h2 { font-size: var(--tam-2xl); }
+h3 { font-size: var(--tam-xl); }
+h4 { font-size: var(--tam-lg); }
+
+p { margin: 0 0 var(--sp-4); color: var(--texto-suave); }
+
+a {
+  color: var(--eje-z);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--eje-x); }
+
+/* Foco visible consistente (accesibilidad) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--eje-z);
+  outline-offset: 3px;
+  border-radius: var(--radio-sm);
+}
+
+kbd {
+  font-family: var(--fuente-mono);
+  font-size: 0.82em;
+  background: var(--bg-alt);
+  border: 1px solid var(--borde);
+  border-bottom-width: 2px;
+  border-radius: var(--radio-sm);
+  padding: 0.15em 0.5em;
+  color: var(--texto);
+}
+
+.contenedor {
+  max-width: var(--ancho-max);
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+.etiqueta-eje {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-family: var(--fuente-mono);
+  font-size: var(--tam-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.etiqueta-eje::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.eje-x { color: var(--eje-x); }
+.eje-y { color: var(--eje-y); }
+.eje-z { color: var(--eje-z); }
+
+.enlace-salto {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--tinta);
+  color: var(--papel);
+  padding: var(--sp-3) var(--sp-4);
+  z-index: 2000;
+  border-radius: 0 0 var(--radio-md) 0;
+}
+.enlace-salto:focus {
+  left: 0;
+}
+
+::selection {
+  background: var(--eje-z);
+  color: var(--papel);
+}

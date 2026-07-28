@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 9 — Extensiones y Ruby API | SketchUp de Cero a Experto</title>
+<meta name="description" content="Descubre Extension Warehouse, instala extensiones para potenciar SketchUp y aprende los fundamentos de la Ruby API para automatizar tareas repetitivas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 9
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-z">Nivel avanzado</span>
+          <span>·</span>
+          <span>28 min de lectura</span>
+        </div>
+        <h1>Extensiones y Ruby API</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          SketchUp es potente por defecto, pero sus extensiones lo convierten en una herramienta
+          casi ilimitada. Aprende a encontrar, instalar y crear extensiones con la Ruby API.
+        </p>
+      </header>
+
+      <!-- Extension Warehouse -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Extension Warehouse</h2>
+        <p>
+          Extension Warehouse es la tienda oficial de extensiones para SketchUp. Accede desde
+          Window → Extension Warehouse dentro de SketchUp, o desde el navegador en
+          <a href="https://extensions.sketchup.com" target="_blank" rel="noopener">extensions.sketchup.com</a>.
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="puzzle"></i> Extensiones gratuitas</h4>
+            <p>Herramientas útiles sin costo: Joint Push Pull, FredoScale, Curviloft, Soap Skin & Bubble.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="credit-card"></i> Extensiones de pago</h4>
+            <p>Soluciones profesionales: Profile Builder, SketchUV, Renderer Pro, PlusSpec.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="shield-check"></i> Verificación</h4>
+            <p>Extensiones verificadas por Trimble. Busca el sello de "Verified" para mayor seguridad.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="refresh-cw"></i> Actualizaciones</h4>
+            <p>Las extensiones se actualizan desde Window → Extension Manager → Updates.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> antes de instalar una extensión, verifica que sea compatible con
+          tu versión de SketchUp. Lee reseñas y revisa la fecha de la última actualización.</p>
+        </div>
+      </section>
+
+      <!-- Instalar extensiones -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Cómo instalar extensiones</h2>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Método</th><th>Pasos</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Desde Extension Warehouse</td>
+              <td>Busca la extensión → clic "Install" → acepta los permisos → reinicia SketchUp.</td>
+            </tr>
+            <tr>
+              <td>Desde un archivo .rbz</td>
+              <td>Window → Extension Manager → Install Extension → selecciona el archivo .rbz → reinicia.</td>
+            </tr>
+            <tr>
+              <td>Manual (desarrolladores)</td>
+              <td>Copia la carpeta de la extensión a la carpeta Plugins de SketchUp.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout--advertencia">
+          <i data-lucide="triangle-alert"></i>
+          <p><strong>Precaución:</strong> solo instala extensiones de fuentes confiables. Una extensión
+          mal programada puede corromper tu archivo o causar errores inesperados. Haz copias de
+          seguridad antes de trabajar con extensiones nuevas.</p>
+        </div>
+      </section>
+
+      <!-- Extensiones recomendadas -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Extensiones recomendadas</h2>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Extensión</th><th>Función</th><th>Coste</th></tr></thead>
+          <tbody>
+            <tr><td>Joint Push Pull</td><td>Empujar/tirar caras curvas y complejas</td><td>Gratuita</td></tr>
+            <tr><td>FredoScale</td><td>Transformaciones avanzadas (escalar, doblar, torsión)</td><td>Gratuita</td></tr>
+            <tr><td>Curviloft</td><td>Crear superficies complejas entre curvas</td><td>Gratuita</td></tr>
+            <tr><td>Profile Builder</td><td>Crear perfiles extruidos (barandillas, molduras, estructuras)</td><td>De pago</td></tr>
+            <tr><td>SketchUV</td><td>Mapeo UV avanzado para texturas complejas</td><td>De pago</td></tr>
+            <tr><td>Instant Road+Path</td><td>Crear carreteras y caminos sobre terreno</td><td>De pago</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Ruby API: introducción -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Ruby API: automatiza SketchUp</h2>
+        <p>
+          SketchUp incluye un intérprete de Ruby que permite programar extensiones y scripts
+          personalizados. No necesitas ser programador para empezar:许多 extensiones populares
+          empezaron como scripts simples de 10 líneas.
+        </p>
+
+        <h3>Abrir la consola de Ruby</h3>
+        <table class="tabla-plano">
+          <thead><tr><th>Versión de SketchUp</th><th>Cómo abrir la consola</th></tr></thead>
+          <tbody>
+            <tr><td>SketchUp Pro (Windows/Mac)</td><td>Window → Ruby Console</td></tr>
+            <tr><td>SketchUp for Web</td><td>No disponible (solo versión Pro)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Ejemplos básicos</h3>
+        <p>Prueba estos comandos en la consola de Ruby:</p>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="terminal"></i>
+          <p><strong>Crear un rectángulo:</strong></p>
+          <p style="font-family: var(--fuente-mono); background: var(--bg); padding: var(--sp-3); border-radius: var(--radio-md); margin-top: var(--sp-2);">
+            model = Sketchup.active_model<br>
+            entities = model.active_entities<br>
+            pts = [Geom::Point3d.new(0,0,0), Geom::Point3d.new(100,0,0),<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Geom::Point3d.new(100,100,0), Geom::Point3d.new(0,100,0)]<br>
+            face = entities.add_face(pts)
+          </p>
+        </div>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="terminal"></i>
+          <p><strong>Extruir una cara (Push/Pull):</strong></p>
+          <p style="font-family: var(--fuente-mono); background: var(--bg); padding: var(--sp-3); border-radius: var(--radio-md); margin-top: var(--sp-2);">
+            face = model.active_entities.grep(Sketchup::Face).last<br>
+            face.pushpull(50)
+          </p>
+        </div>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="terminal"></i>
+          <p><strong>Contar entidades del modelo:</strong></p>
+          <p style="font-family: var(--fuente-mono); background: var(--bg); padding: var(--sp-3); border-radius: var(--radio-md); margin-top: var(--sp-2);">
+            model.active_entities.length
+          </p>
+        </div>
+      </section>
+
+      <!-- Estructura de una extensión -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Estructura de una extensión</h2>
+        <p>
+          Una extensión de SketchUp es un archivo .rb (o carpeta con varios .rb) que se carga
+          automáticamente al iniciar SketchUp. La estructura mínima es:
+        </p>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="file-code"></i>
+          <p style="font-family: var(--fuente-mono); background: var(--bg); padding: var(--sp-3); border-radius: var(--radio-md); margin-top: var(--sp-2);">
+            # mi_extension.rb<br>
+            module MiExtension<br>
+            &nbsp;&nbsp;def self.init<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;# Código de inicialización<br>
+            &nbsp;&nbsp;end<br>
+            end<br><br>
+            if not file_loaded?("mi_extension.rb")<br>
+            &nbsp;&nbsp;MiExtension.init<br>
+            &nbsp;&nbsp;file_loaded("mi_extension.rb")<br>
+            end
+          </p>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> si quieres aprender Ruby API, estudia el código de extensiones
+          gratuitas en GitHub. La mayoría son código abierto y puedes ver exactamente cómo están
+          hechas.</p>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos y comandos de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Acción</th><th>Windows</th><th>Mac</th></tr></thead>
+          <tbody>
+            <tr><td>Abrir Extension Warehouse</td><td>Window → Extension Warehouse</td><td>Window → Extension Warehouse</td></tr>
+            <tr><td>Abrir Extension Manager</td><td>Window → Extension Manager</td><td>Window → Extension Manager</td></tr>
+            <tr><td>Abrir Ruby Console</td><td>Window → Ruby Console</td><td>Window → Ruby Console</td></tr>
+            <tr><td>Cargar archivo .rbz</td><td>Extension Manager → Install</td><td>Extension Manager → Install</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> abre la consola de Ruby en SketchUp y ejecuta el
+          código para crear un rectángulo y extruirlo. Luego busca la extensión "Joint Push Pull"
+          en Extension Warehouse e instálala. Crea una cara curva y prueba la herramienta
+          "Joint Push Pull" para extruirla.</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Dónde se encuentran las extensiones oficiales de SketchUp?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">GitHub</button>
+              <button class="quiz-opcion">Chrome Web Store</button>
+              <button class="quiz-opcion">Extension Warehouse</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Qué formato de archivo se usa para instalar extensiones manualmente?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">.rbz</button>
+              <button class="quiz-opcion">.zip</button>
+              <button class="quiz-opcion">.exe</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Qué lenguaje de programación usa la Ruby API de SketchUp?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Python</button>
+              <button class="quiz-opcion">Ruby</button>
+              <button class="quiz-opcion">JavaScript</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="08-render-vray-enscape.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 8 — Render
+        </a>
+        <a href="10-flujos-profesionales.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 10 — Flujos profesionales
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("09");
+    inicializarBotonCompletado("09");
+  });
+</script>
+
+</body>
+</html>

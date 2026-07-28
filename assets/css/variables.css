@@ -1,0 +1,104 @@
+/* ==========================================================================
+   SketchUp de Cero a Experto — Design Tokens
+   Paleta inspirada en los ejes de color de SketchUp (rojo/verde/azul)
+   sobre una base tipo "papel de plano técnico".
+   ========================================================================== */
+
+:root {
+  /* ---- Paleta base (modo claro / "plano de papel") ---- */
+  --papel: #f3efe6;
+  --papel-alt: #ece5d4;
+  --tinta: #1c2321;
+  --tinta-suave: #4a4f4a;
+  --linea-plano: #b9c9d6;
+  --linea-plano-fuerte: #7fa8c9;
+
+  /* ---- Colores de eje (acento — usar con moderación) ---- */
+  --eje-x: #e4572e; /* rojo — eje X */
+  --eje-y: #2e8b57; /* verde — eje Y */
+  --eje-z: #1c6dd0; /* azul — eje Z */
+
+  --eje-x-suave: #f7ded5;
+  --eje-y-suave: #dcefe3;
+  --eje-z-suave: #dbe7f7;
+
+  /* ---- Estado ---- */
+  --exito: #2e8b57;
+  --alerta: #e4572e;
+  --info: #1c6dd0;
+
+  /* ---- Tipografía ---- */
+  --fuente-display: "Space Grotesk", "Archivo", sans-serif;
+  --fuente-cuerpo: "IBM Plex Sans", "Inter", sans-serif;
+  --fuente-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+
+  --tam-xs: 0.8rem;
+  --tam-sm: 0.9rem;
+  --tam-base: 1rem;
+  --tam-md: 1.15rem;
+  --tam-lg: 1.5rem;
+  --tam-xl: 2.25rem;
+  --tam-2xl: 3.25rem;
+  --tam-3xl: 4.5rem;
+
+  /* ---- Espaciado (escala 4px) ---- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-6: 1.5rem;
+  --sp-8: 2rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-24: 6rem;
+
+  /* ---- Bordes y sombras ---- */
+  --radio-sm: 4px;
+  --radio-md: 8px;
+  --radio-lg: 14px;
+  --sombra-suave: 0 2px 10px rgba(28, 35, 33, 0.06);
+  --sombra-media: 0 8px 30px rgba(28, 35, 33, 0.1);
+
+  /* ---- Layout ---- */
+  --ancho-max: 1180px;
+  --alto-navbar: 68px;
+
+  /* ---- Semánticas activas (cambian con el tema) ---- */
+  --bg: var(--papel);
+  --bg-alt: var(--papel-alt);
+  --texto: var(--tinta);
+  --texto-suave: var(--tinta-suave);
+  --borde: var(--linea-plano);
+}
+
+/* ---- Modo oscuro ("plano en negativo") ---- */
+[data-tema="oscuro"] {
+  --papel: #10161b;
+  --papel-alt: #161f26;
+  --tinta: #e9e4d8;
+  --tinta-suave: #a9b0ab;
+  --linea-plano: #223038;
+  --linea-plano-fuerte: #2f4a5c;
+
+  --eje-x-suave: #3a2420;
+  --eje-y-suave: #1c3227;
+  --eje-z-suave: #17293e;
+
+  --sombra-suave: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --sombra-media: 0 8px 30px rgba(0, 0, 0, 0.45);
+
+  --bg: var(--papel);
+  --bg-alt: var(--papel-alt);
+  --texto: var(--tinta);
+  --texto-suave: var(--tinta-suave);
+  --borde: var(--linea-plano);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

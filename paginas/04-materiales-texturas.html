@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 4 — Materiales y texturas | SketchUp de Cero a Experto</title>
+<meta name="description" content="Aplicar, crear y editar materiales en SketchUp: bibliotecas, pintado por cara o por entidad, mapeo UV básico y ajuste de texturas.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+
+<style>
+  .muestras-material { display:flex; gap: var(--sp-3); margin: var(--sp-4) 0; flex-wrap: wrap; }
+  .muestra {
+    width: 64px; height: 64px; border-radius: var(--radio-md);
+    border: 1px solid var(--borde);
+    display:flex; align-items:flex-end; justify-content:center;
+    font-family: var(--fuente-mono); font-size: 0.6rem; color: var(--papel);
+    padding-bottom: 4px; position:relative; overflow:hidden;
+  }
+  .muestra span { background: rgba(0,0,0,0.35); padding: 1px 4px; border-radius: 3px; }
+  .muestra--madera { background: repeating-linear-gradient(100deg,#b98a5a,#b98a5a 6px,#a97b4d 6px,#a97b4d 12px); }
+  .muestra--concreto { background: radial-gradient(circle at 30% 30%, #9a9a92, #7c7c74); }
+  .muestra--vidrio { background: linear-gradient(135deg, #bcd4e6, #7fa8c9); color: var(--tinta); }
+  .muestra--metal { background: linear-gradient(135deg, #d8d8d8, #9a9a9a); color: var(--tinta); }
+</style>
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 4
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-y">Nivel intermedio</span>
+          <span>·</span>
+          <span>16 min de lectura</span>
+        </div>
+        <h1>Materiales y texturas</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          Un modelo bien construido pero sin materiales se ve como un boceto. Aquí aprenderás a
+          aplicar, crear y ajustar materiales para que tus superficies cuenten la historia correcta.
+        </p>
+      </header>
+
+      <!-- Aplicar materiales -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Aplicar materiales</h2>
+        <p>
+          El panel <strong>Materiales</strong> tiene dos pestañas clave: <em>Seleccionar</em>
+          (bibliotecas por categoría: madera, ladrillo, vidrio, tela...) y <em>Editar</em>
+          (ajustes del material activo). Con el bote de pintura seleccionado:
+        </p>
+
+        <div class="muestras-material" role="img" aria-label="Ejemplos de materiales: madera, concreto, vidrio y metal">
+          <div class="muestra muestra--madera"><span>Madera</span></div>
+          <div class="muestra muestra--concreto"><span>Concreto</span></div>
+          <div class="muestra muestra--vidrio"><span>Vidrio</span></div>
+          <div class="muestra muestra--metal"><span>Metal</span></div>
+        </div>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Clic</th><th>Resultado</th></tr></thead>
+          <tbody>
+            <tr><td>Clic simple sobre una cara</td><td>Pinta solo esa cara</td></tr>
+            <tr><td><kbd>Ctrl</kbd> + clic (Win) / <kbd>⌥</kbd> + clic (Mac)</td><td>Pinta todas las caras del mismo material dentro del grupo</td></tr>
+            <tr><td>Clic sobre un grupo/componente (sin entrar)</td><td>Pinta la entidad completa como color base</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout--advertencia">
+          <i data-lucide="triangle-alert"></i>
+          <p><strong>Cara frontal vs. trasera:</strong> SketchUp distingue las dos caras de una
+          superficie (blanca = trasera, gris claro = frontal por defecto). Pintar la cara trasera con
+          el material equivocado es el error de material más común en principiantes.</p>
+        </div>
+      </section>
+
+      <!-- Mapeo UV -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mapeo UV básico (posicionar textura)</h2>
+        <p>
+          Cuando una textura se ve estirada, rotada o desalineada, usa
+          <strong>clic derecho → Textura → Posicionar</strong>. Aparecen 4 chinchetas (pins) que
+          controlas de forma distinta:
+        </p>
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="pin"></i> Chincheta roja</h4>
+            <p>Mueve el origen de la textura completa.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="move"></i> Chincheta verde</h4>
+            <p>Escala y gira la textura desde ese punto.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="scaling"></i> Chincheta azul</h4>
+            <p>Escala en la dirección opuesta (modo "Fijo").</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="shear"></i> Chincheta amarilla</h4>
+            <p>Distorsiona/inclina la textura — útil para perspectiva forzada.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> el modo <em>Fijo</em> (Fixed Pins) es más predecible que el modo
+          <em>Libre</em> — muévete siempre chincheta por chincheta en orden (roja → verde → azul →
+          amarilla) para evitar resultados inesperados.</p>
+        </div>
+      </section>
+
+      <!-- Crear y editar materiales -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Crear y editar materiales</h2>
+        <p>
+          En la pestaña <strong>Editar</strong> puedes crear un material desde cero o modificar uno
+          de la biblioteca (SketchUp crea automáticamente una copia, nunca sobreescribe el original):
+        </p>
+        <table class="tabla-plano">
+          <thead><tr><th>Parámetro</th><th>Qué controla</th></tr></thead>
+          <tbody>
+            <tr><td>Color / Tinte</td><td>Mezcla un color sólido sobre la textura</td></tr>
+            <tr><td>Textura (imagen)</td><td>Archivo de imagen que se repite sobre la superficie</td></tr>
+            <tr><td>Tamaño de textura (ancho/alto)</td><td>Escala real de un solo mosaico de repetición</td></tr>
+            <tr><td>Opacidad</td><td>Transparencia del material (vidrio, tela fina)</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="keyboard"></i>
+          <p><strong>Atajo pro:</strong> escribe el tamaño real del mosaico de textura (ej. 20cm de
+          un ladrillo) en "Tamaño de textura" — así, cuando midas tu modelo, la escala de la textura
+          coincidirá con la realidad.</p>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos de teclado de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Acción</th><th>Windows</th><th>Mac</th></tr></thead>
+          <tbody>
+            <tr><td>Bote de pintura (Material)</td><td><kbd>B</kbd></td><td><kbd>B</kbd></td></tr>
+            <tr><td>Cuentagotas de material</td><td><kbd>Alt</kbd> + clic con bote activo</td><td><kbd>⌥</kbd> + clic</td></tr>
+            <tr><td>Panel Materiales</td><td>Ventana → Materiales</td><td>Ventana → Materiales</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> toma una caja simple, aplica un material de madera a
+          sus caras laterales y uno de concreto a la base. Luego usa "Posicionar textura" para
+          alinear las vetas de la madera con el borde superior.</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Qué combinación pinta todas las caras con el mismo material dentro de un grupo?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Ctrl + clic (Win) / ⌥ + clic (Mac)</button>
+              <button class="quiz-opcion">Doble clic simple</button>
+              <button class="quiz-opcion">Mayús + arrastrar</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Qué chincheta se usa para mover el origen completo de una textura?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Verde</button>
+              <button class="quiz-opcion">Roja</button>
+              <button class="quiz-opcion">Amarilla</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Qué parámetro del material controla su transparencia?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Tamaño de textura</button>
+              <button class="quiz-opcion">Tinte</button>
+              <button class="quiz-opcion">Opacidad</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="03-modelado-solidos.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 3 — Modelado sólido
+        </a>
+        <a href="05-capas-etiquetas.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 5 — Capas y etiquetas
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("04");
+    inicializarBotonCompletado("04");
+  });
+</script>
+
+</body>
+</html>

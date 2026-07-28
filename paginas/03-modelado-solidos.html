@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 3 — Modelado sólido | SketchUp de Cero a Experto</title>
+<meta name="description" content="Operaciones booleanas (Unión, Sustracción, Intersección, Recorte, División) y edición de geometría compleja en SketchUp.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+
+<style>
+  .diagrama-booleano { display:flex; flex-direction:column; align-items:center; gap: var(--sp-2); }
+  .diagrama-booleano svg { width: 100%; max-width: 150px; height: auto; }
+  .diagrama-booleano span { font-family: var(--fuente-mono); font-size: var(--tam-xs); color: var(--texto-suave); text-align:center; }
+</style>
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 3
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-x">Nivel principiante</span>
+          <span>·</span>
+          <span>22 min de lectura</span>
+        </div>
+        <h1>Modelado sólido</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          Cuando dos formas simples ya no bastan, las operaciones booleanas te permiten combinar,
+          restar e intersectar volúmenes completos en un solo clic.
+        </p>
+      </header>
+
+      <!-- Qué es un sólido -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>¿Qué es un "sólido" en SketchUp?</h2>
+        <p>
+          Un sólido es un grupo o componente cuya geometría forma un volumen completamente cerrado,
+          sin huecos ni caras invertidas — SketchUp lo llama geometría <em>manifold</em>. Solo los
+          sólidos válidos pueden usarse con las herramientas booleanas.
+        </p>
+
+        <div class="callout callout--advertencia">
+          <i data-lucide="triangle-alert"></i>
+          <p><strong>Requisito clave:</strong> si una operación booleana no funciona, casi siempre es
+          porque el grupo tiene una cara faltante o borde suelto. Usa <kbd>Entity Info</kbd> — un
+          sólido válido muestra un ícono de cubo verde junto a su nombre.</p>
+        </div>
+      </section>
+
+      <!-- Operaciones booleanas -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Las cinco operaciones booleanas</h2>
+        <p>Se encuentran en la barra de herramientas <strong>Sólidos</strong> y siempre trabajan sobre dos sólidos seleccionados:</p>
+
+        <div class="grid-paneles" style="grid-template-columns: repeat(auto-fit, minmax(150px,1fr));">
+          <div class="panel-item diagrama-booleano">
+            <svg viewBox="0 0 100 70"><circle cx="35" cy="35" r="26" fill="var(--eje-z-suave)" stroke="var(--eje-z)" stroke-width="2"/><circle cx="65" cy="35" r="26" fill="var(--eje-x-suave)" stroke="var(--eje-x)" stroke-width="2" fill-opacity="0.7"/></svg>
+            <h4 style="justify-content:center;"><i data-lucide="union"></i> Unión</h4>
+            <span>Combina dos sólidos en uno.</span>
+          </div>
+          <div class="panel-item diagrama-booleano">
+            <svg viewBox="0 0 100 70"><defs><mask id="m1"><rect width="100" height="70" fill="white"/><circle cx="65" cy="35" r="26" fill="black"/></mask></defs><circle cx="35" cy="35" r="26" fill="var(--eje-z-suave)" stroke="var(--eje-z)" stroke-width="2" mask="url(#m1)"/><circle cx="65" cy="35" r="26" fill="none" stroke="var(--eje-x)" stroke-width="1.5" stroke-dasharray="3 2"/></svg>
+            <h4 style="justify-content:center;"><i data-lucide="minus-circle"></i> Sustracción</h4>
+            <span>Resta el segundo sólido del primero.</span>
+          </div>
+          <div class="panel-item diagrama-booleano">
+            <svg viewBox="0 0 100 70"><circle cx="35" cy="35" r="26" fill="none" stroke="var(--eje-z)" stroke-width="1.5" stroke-dasharray="3 2"/><circle cx="65" cy="35" r="26" fill="none" stroke="var(--eje-x)" stroke-width="1.5" stroke-dasharray="3 2"/><path d="M50,13 A26,26 0 0,1 50,57 A26,26 0 0,1 50,13 Z" fill="var(--eje-y-suave)" stroke="var(--eje-y)" stroke-width="2"/></svg>
+            <h4 style="justify-content:center;"><i data-lucide="intersect"></i> Intersección</h4>
+            <span>Conserva solo el volumen compartido.</span>
+          </div>
+          <div class="panel-item diagrama-booleano">
+            <svg viewBox="0 0 100 70"><circle cx="35" cy="35" r="26" fill="var(--eje-z-suave)" stroke="var(--eje-z)" stroke-width="2"/><circle cx="65" cy="35" r="26" fill="none" stroke="var(--eje-x)" stroke-width="1.5" stroke-dasharray="3 2"/></svg>
+            <h4 style="justify-content:center;"><i data-lucide="scissors"></i> Recorte</h4>
+            <span>Corta el primero con el segundo, sin conservar el segundo.</span>
+          </div>
+          <div class="panel-item diagrama-booleano">
+            <svg viewBox="0 0 100 70"><circle cx="35" cy="35" r="26" fill="var(--eje-z-suave)" stroke="var(--eje-z)" stroke-width="2"/><circle cx="65" cy="35" r="26" fill="var(--eje-x-suave)" stroke="var(--eje-x)" stroke-width="2"/><line x1="50" y1="10" x2="50" y2="60" stroke="var(--tinta)" stroke-width="1.5" stroke-dasharray="2 2"/></svg>
+            <h4 style="justify-content:center;"><i data-lucide="split"></i> División</h4>
+            <span>Separa ambos sólidos en tres piezas independientes.</span>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> el orden en que seleccionas los sólidos importa en Sustracción y
+          Recorte — el resultado siempre conserva la forma del primer sólido seleccionado.</p>
+        </div>
+      </section>
+
+      <!-- Edición de geometría compleja -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Edición de geometría compleja</h2>
+        <p>
+          Más allá de las booleanas, dos ajustes marcan la diferencia entre un modelo que se ve
+          "hecho en bloques" y uno con acabado profesional:
+        </p>
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="waves"></i> Suavizar / Ocultar aristas</h4>
+            <p>Suaviza el sombreado entre caras adyacentes (útil en superficies curvas) u oculta
+            líneas de construcción sin borrar la geometría.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="move-3d"></i> Mover con inferencia</h4>
+            <p>La herramienta Mover respeta los ejes y los puntos medios/extremos cercanos —
+            aprovecha esas guías para editar con precisión milimétrica.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos de teclado de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Acción</th><th>Windows</th><th>Mac</th></tr></thead>
+          <tbody>
+            <tr><td>Mover</td><td><kbd>M</kbd></td><td><kbd>M</kbd></td></tr>
+            <tr><td>Escalar</td><td><kbd>S</kbd></td><td><kbd>S</kbd></td></tr>
+            <tr><td>Rotar</td><td><kbd>Q</kbd></td><td><kbd>Q</kbd></td></tr>
+            <tr><td>Suavizar aristas</td><td>Menú contextual</td><td>Menú contextual</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> crea dos cajas que se superpongan parcialmente,
+          conviértelas en grupos, y prueba las cinco operaciones booleanas sobre el mismo par
+          para ver la diferencia entre cada una.</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Qué operación conserva únicamente el volumen que comparten dos sólidos?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Unión</button>
+              <button class="quiz-opcion">Intersección</button>
+              <button class="quiz-opcion">División</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Cómo se llama la geometría cerrada sin huecos que exige una operación booleana?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Manifold (sólido válido)</button>
+              <button class="quiz-opcion">Componente dinámico</button>
+              <button class="quiz-opcion">Malla abierta</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Qué operación separa dos sólidos en tres piezas independientes?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Recorte</button>
+              <button class="quiz-opcion">Sustracción</button>
+              <button class="quiz-opcion">División</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="02-herramientas-basicas.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 2 — Herramientas básicas
+        </a>
+        <a href="04-materiales-texturas.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 4 — Materiales y texturas
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("03");
+    inicializarBotonCompletado("03");
+  });
+</script>
+
+</body>
+</html>

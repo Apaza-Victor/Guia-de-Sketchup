@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 7 — LayOut: documentación técnica | SketchUp de Cero a Experto</title>
+<meta name="description" content="Aprende a crear planos, vistas, anotaciones y documentación técnica profesional con LayOut, el complemento de SketchUp para entregas de proyecto.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 7
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-y">Nivel intermedio</span>
+          <span>·</span>
+          <span>25 min de lectura</span>
+        </div>
+        <h1>LayOut — documentación técnica</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          Modelar en SketchUp es solo la mitad del trabajo. LayOut convierte tus modelos 3D en planos
+          técnicos, vistas en perspectiva y presentaciones listas para imprimir o enviar al cliente.
+        </p>
+      </header>
+
+      <!-- ¿Qué es LayOut? -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>¿Qué es LayOut?</h2>
+        <p>
+          LayOut es un programa incluido con SketchUp Pro que toma tu modelo 3D y lo coloca sobre
+          hojas de papel con escala, cotas, anotaciones y bloques de título. Piensa en él como el
+          "Puente" entre tu modelo digital y los planos impresos que un constructor puede leer.
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="file-text"></i> Planos a escala</h4>
+            <p>Plantas, alzados y secciones con cotas dimensionales precisas.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="image"></i> Perspectivas</h4>
+            <p>Vistas 3D renderizadas para presentación al cliente.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="type"></i> Anotaciones</h4>
+            <p>Etiquetas, líderes de texto, tablas de materiales y bloques de título.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="printer"></i> Exportación</h4>
+            <p>PDF, imagen o impresión directa para entrega profesional.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flujo de trabajo -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Flujo de trabajo básico</h2>
+
+        <div class="diagrama-anotado">
+          <svg viewBox="0 0 450 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama del flujo de trabajo de SketchUp a LayOut">
+            <!-- Paso 1 -->
+            <rect x="10" y="40" width="100" height="80" rx="8" fill="var(--eje-z-suave)" stroke="var(--eje-z)" stroke-width="1.5"/>
+            <text x="60" y="75" text-anchor="middle" font-size="11" fill="var(--eje-z)" font-family="var(--fuente-mono)" font-weight="600">SketchUp</text>
+            <text x="60" y="95" text-anchor="middle" font-size="9" fill="var(--texto-suave)" font-family="var(--fuente-mono)">Modelo 3D</text>
+
+            <!-- Flecha 1 -->
+            <line x1="120" y1="80" x2="155" y2="80" stroke="var(--tinta)" stroke-width="1.5" marker-end="url(#flecha-layout)"/>
+
+            <!-- Paso 2 -->
+            <rect x="160" y="40" width="100" height="80" rx="8" fill="var(--eje-y-suave)" stroke="var(--eje-y)" stroke-width="1.5"/>
+            <text x="210" y="75" text-anchor="middle" font-size="11" fill="var(--eje-y)" font-family="var(--fuente-mono)" font-weight="600">Escenas</text>
+            <text x="210" y="95" text-anchor="middle" font-size="9" fill="var(--texto-suave)" font-family="var(--fuente-mono)">Vistas guardadas</text>
+
+            <!-- Flecha 2 -->
+            <line x1="270" y1="80" x2="305" y2="80" stroke="var(--tinta)" stroke-width="1.5" marker-end="url(#flecha-layout)"/>
+
+            <!-- Paso 3 -->
+            <rect x="310" y="40" width="120" height="80" rx="8" fill="var(--eje-x-suave)" stroke="var(--eje-x)" stroke-width="1.5"/>
+            <text x="370" y="75" text-anchor="middle" font-size="11" fill="var(--eje-x)" font-family="var(--fuente-mono)" font-weight="600">LayOut</text>
+            <text x="370" y="95" text-anchor="middle" font-size="9" fill="var(--texto-suave)" font-family="var(--fuente-mono)">Planos + Anotaciones</text>
+
+            <!-- Etiqueta inferior -->
+            <text x="225" y="155" text-anchor="middle" font-size="10" fill="var(--texto-suave)" font-family="var(--fuente-mono)">File → Send to LayOut (desde SketchUp)</text>
+
+            <defs>
+              <marker id="flecha-layout" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-auto">
+                <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--tinta)"/>
+              </marker>
+            </defs>
+          </svg>
+
+          <ol class="leyenda-diagrama">
+            <li><span class="num">1</span><div><strong>Modelo en SketchUp</strong><span>Tu geometría 3D con materiales y capas organizadas.</span></div></li>
+            <li><span class="num">2</span><div><strong>Escenas</strong><span>Vistas guardadas en SketchUp (planta, alzado, perspectiva).</span></div></li>
+            <li><span class="num">3</span><div><strong>LayOut</strong><span>Las escenas se insertan como "viewports" en hojas de plano.</span></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Escenas en SketchUp -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Preparar escenas en SketchUp</h2>
+        <p>
+          Antes de abrir LayOut, necesitas crear escenas en SketchUp. Cada escena guarda una
+          configuración de cámara, visibilidad de capas y estilo de vista.
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="camera"></i> Escena de planta</h4>
+            <p>Vista superior ortogonal. Configura Cámara → Vista estándar → Superior.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="move-3d"></i> Escena de alzado</h4>
+            <p>Vista frontal, lateral o trasera. Igual que planta, pero desde otro ángulo.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="box"></i> Escena de perspectiva</h4>
+            <p>Vista 3D con perspectiva. Ideal para presentaciones y renders.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="scissors"></i> Escena de sección</h4>
+            <p>Usa la herramienta de plano de sección para cortar el modelo y mostrar el interior.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> nombra tus escenas descriptivamente ("Planta Baja", "Alzado Norte")
+          antes de enviar a LayOut. Esto facilita mucho el trabajo en el documento final.</p>
+        </div>
+      </section>
+
+      <!-- Trabajar en LayOut -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Trabajando en LayOut</h2>
+        <p>
+          Al abrir LayOut, eliges una plantilla de papel (tamaño, orientación). Luego insertas
+          tus escenas de SketchUp como viewports ajustables.
+        </p>
+
+        <table class="tabla-plano">
+          <thead><tr><th>Función</th><th>Cómo</th></tr></thead>
+          <tbody>
+            <tr><td>Insertar vista de SketchUp</td><td>ScratchPad →Modelo → seleccionar escena</td></tr>
+            <tr><td>Ajustar escala</td><td>Clic derecho sobre viewport → Scale → elegir escala (1:50, 1:100...)</td></tr>
+            <tr><td>Agregar cotas</td><td>Herramienta Dimensions → clic en dos puntos</td></tr>
+            <tr><td>Texto libre</td><td>Herramienta Text → clic en el plano → escribir</td></tr>
+            <tr><td>Líderes de anotación</td><td>Herramienta Leader → clic en punto → arrastrar → escribir</td></tr>
+            <tr><td>Tabla de bloques de título</td><td>Auto-Text o plantilla predefinida</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Escalas comunes -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Escalas comunes en arquitectura</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Escala</th><th>Uso típico</th></tr></thead>
+          <tbody>
+            <tr><td>1:50</td><td>Plano de planta detallado (muebles, dimensiones)</td></tr>
+            <tr><td>1:100</td><td>Planta de distribución general</td></tr>
+            <tr><td>1:200</td><td>Plano de conjunto o ubicación</td></tr>
+            <tr><td>1:20</td><td>Detalle constructivo (juntas, refuerzos)</td></tr>
+            <tr><td>1:1</td><td>Detalle a tamaño real (perfiles, molduras)</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout callout--advertencia">
+          <i data-lucide="triangle-alert"></i>
+          <p><strong>Importante:</strong> siempre verifica que la escala del viewport en LayOut
+          coincida con la escala que indicas en el bloque de título. Una discrepancia puede causar
+          errores graves en la construcción.</p>
+        </div>
+      </section>
+
+      <!-- Exportar -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Exportar y compartir</h2>
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="file"></i> PDF</h4>
+            <p>Formato estándar para envío a clientes e impresión. File → Export → PDF.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="image"></i> Imagen (PNG/JPG)</h4>
+            <p>Útil para presentaciones digitales o redes sociales.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="printer"></i> Impresión directa</h4>
+            <p>File → Print. Asegúrate de configurar la escala correcta en opciones de impresión.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos de teclado de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Acción</th><th>Windows</th><th>Mac</th></tr></thead>
+          <tbody>
+            <tr><td>Enviar a LayOut</td><td>File → Send to LayOut</td><td>File → Send to LayOut</td></tr>
+            <tr><td>Crear escena</td><td>Window → Scenes → "+"</td><td>Window → Scenes → "+"</td></tr>
+            <tr><td>Agregar cota</td><td>LayOut: D</td><td>LayOut: D</td></tr>
+            <tr><td>Agregar texto</td><td>LayOut: T</td><td>LayOut: T</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> abre un modelo de ejemplo en SketchUp, crea 3 escenas
+          (planta, alzado frontal y perspectiva), envíalo a LayOut y coloca las 3 vistas en una
+          hoja A4 con cotas en la planta y un texto descriptivo en la perspectiva.</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Qué programa se usa junto con SketchUp para crear planos técnicos?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">LayOut</button>
+              <button class="quiz-opcion">AutoCAD</button>
+              <button class="quiz-opcion">Photoshop</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Qué escala se usa típicamente para un plano de planta detallado con muebles?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">1:200</button>
+              <button class="quiz-opcion">1:100</button>
+              <button class="quiz-opcion">1:50</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Qué formato es el estándar para enviar planos a un cliente?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">DOCX</button>
+              <button class="quiz-opcion">PDF</button>
+              <button class="quiz-opcion">MP4</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="06-componentes-grupos.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 6 — Grupos y componentes
+        </a>
+        <a href="08-render-vray-enscape.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 8 — Render
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("07");
+    inicializarBotonCompletado("07");
+  });
+</script>
+
+</body>
+</html>

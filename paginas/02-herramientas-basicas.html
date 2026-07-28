@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 2 — Herramientas básicas | SketchUp de Cero a Experto</title>
+<meta name="description" content="Línea, Rectángulo, Círculo, Empujar/Tirar, Seguir y Desplazar: las seis herramientas que cubren la mayoría del modelado diario en SketchUp.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+
+<style>
+  /* Mini escena Push/Pull reutilizada del hero, en tamaño reducido */
+  .mini-escena { display:flex; align-items:center; justify-content:center; }
+  .mini-escena svg { width: 100%; max-width: 260px; height: auto; overflow: visible; }
+  .mini-escena .grupo-extrusion { animation: empujar-mini 3.2s ease-in-out infinite; transform-origin: center; }
+  @keyframes empujar-mini {
+    0%, 15% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    85%, 100% { transform: translateY(0); }
+  }
+  .mini-escena .flecha { stroke: var(--eje-x); stroke-width: 2.5; opacity: 0; animation: flecha-mini 3.2s ease-in-out infinite; }
+  @keyframes flecha-mini { 0%,10%{opacity:0;} 20%,45%{opacity:1;} 60%,100%{opacity:0;} }
+</style>
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 2
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-x">Nivel principiante</span>
+          <span>·</span>
+          <span>18 min de lectura</span>
+        </div>
+        <h1>Herramientas básicas</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          Seis herramientas cubren la mayoría de lo que harás en SketchUp día a día. Domínalas bien
+          y podrás modelar prácticamente cualquier forma antes de tocar un plugin.
+        </p>
+      </header>
+
+      <!-- Dibujo 2D -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Herramientas de dibujo 2D</h2>
+        <p>
+          Todo modelo en SketchUp empieza con geometría plana (caras) que luego se convierte en
+          volumen. Estas tres herramientas crean esas caras iniciales:
+        </p>
+
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="minus"></i> Línea <kbd style="margin-left:auto;">L</kbd></h4>
+            <p>Traza segmentos rectos. Escribe una medida y presiona Enter para longitud exacta.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="square"></i> Rectángulo <kbd style="margin-left:auto;">R</kbd></h4>
+            <p>Crea una cara rectangular a partir de dos esquinas opuestas.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="circle"></i> Círculo <kbd style="margin-left:auto;">C</kbd></h4>
+            <p>Dibuja un círculo (en realidad, un polígono de 24 lados por defecto).</p>
+          </div>
+        </div>
+
+        <div class="callout callout--atajo">
+          <i data-lucide="keyboard"></i>
+          <p><strong>Atajo pro:</strong> con cualquier herramienta de dibujo activa, escribe un número
+          antes de hacer clic para forzar cantidad de lados (círculo) o usa <kbd>Tab</kbd> para saltar
+          entre campos de medida.</p>
+        </div>
+      </section>
+
+      <!-- Push/Pull -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Empujar/Tirar (Push/Pull)</h2>
+        <div class="diagrama-anotado">
+          <div>
+            <p>
+              La herramienta que hace famoso a SketchUp. Toma cualquier cara plana y la convierte
+              en volumen con un solo arrastre: empújala hacia adentro para restar material,
+              o tírala hacia afuera para extruir.
+            </p>
+            <p>
+              Haz doble clic para repetir la última extrusión en otra cara — muy útil para
+              ventanas o perforaciones repetidas a la misma profundidad.
+            </p>
+          </div>
+          <div class="mini-escena" role="img" aria-label="Animación de una cara siendo extruida con la herramienta Empujar/Tirar">
+            <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+              <polygon class="cara cara-izq" points="60,190 150,240 150,290 60,240" stroke="var(--tinta)" stroke-width="2"/>
+              <polygon class="cara cara-der" points="150,240 240,190 240,240 150,290" stroke="var(--tinta)" stroke-width="2"/>
+              <polygon class="cara cara-top" points="60,190 150,140 240,190 150,240" stroke="var(--tinta)" stroke-width="2"/>
+              <g class="grupo-extrusion">
+                <polygon class="cara cara-izq" points="60,140 150,190 150,240 60,190" stroke="var(--tinta)" stroke-width="2"/>
+                <polygon class="cara cara-der" points="150,190 240,140 240,190 150,240" stroke="var(--tinta)" stroke-width="2"/>
+                <polygon class="cara cara-top" points="60,140 150,90 240,140 150,190" stroke="var(--tinta)" stroke-width="2"/>
+                <line class="flecha" x1="150" y1="90" x2="150" y2="40"/>
+                <polygon class="flecha" points="150,30 143,45 157,45" fill="var(--eje-x)" stroke="none"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- Follow Me y Offset -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Seguir (Follow Me) y Desplazar (Offset)</h2>
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="route"></i> Seguir (Follow Me)</h4>
+            <p>Extruye una cara a lo largo de una trayectoria (una serie de aristas). Ideal para
+            molduras, tuberías y perfiles curvos como una tetera clásica.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="copy-plus"></i> Desplazar (Offset) <kbd style="margin-left:auto;">F</kbd></h4>
+            <p>Crea una copia paralela de un contorno hacia adentro o afuera — perfecto para marcos
+            de ventana o bordes de losa.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> Seguir se vuelve mucho más rápido si primero seleccionas la
+          trayectoria completa y luego haces clic en la cara del perfil con <kbd>Ctrl</kbd> — así
+          evitas trazar el recorrido manualmente con el ratón.</p>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Atajos de teclado de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Herramienta</th><th>Windows</th><th>Mac</th></tr></thead>
+          <tbody>
+            <tr><td>Línea</td><td><kbd>L</kbd></td><td><kbd>L</kbd></td></tr>
+            <tr><td>Rectángulo</td><td><kbd>R</kbd></td><td><kbd>R</kbd></td></tr>
+            <tr><td>Círculo</td><td><kbd>C</kbd></td><td><kbd>C</kbd></td></tr>
+            <tr><td>Empujar/Tirar</td><td><kbd>P</kbd></td><td><kbd>P</kbd></td></tr>
+            <tr><td>Seguir</td><td><kbd>Alt</kbd>+<kbd>Mayús</kbd>+<kbd>F</kbd></td><td><kbd>⌥</kbd>+<kbd>⇧</kbd>+<kbd>F</kbd></td></tr>
+            <tr><td>Desplazar</td><td><kbd>F</kbd></td><td><kbd>F</kbd></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> dibuja un rectángulo, conviértelo en una caja con
+          Empujar/Tirar, y luego usa Desplazar sobre la cara superior para crear un marco antes
+          de volver a empujar ese marco hacia adentro.</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Qué herramienta convierte una cara plana en volumen?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Desplazar</button>
+              <button class="quiz-opcion">Empujar/Tirar</button>
+              <button class="quiz-opcion">Línea</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Cuál es el atajo de teclado para Círculo?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">R</button>
+              <button class="quiz-opcion">L</button>
+              <button class="quiz-opcion">C</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Qué herramienta usarías para crear una moldura siguiendo un perfil curvo?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Seguir (Follow Me)</button>
+              <button class="quiz-opcion">Rectángulo</button>
+              <button class="quiz-opcion">Desplazar</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="01-interfaz.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 1 — Interfaz y navegación
+        </a>
+        <a href="03-modelado-solidos.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 3 — Modelado sólido
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("02");
+    inicializarBotonCompletado("02");
+  });
+</script>
+
+</body>
+</html>

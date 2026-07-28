@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 5 — Capas y etiquetas | SketchUp de Cero a Experto</title>
+<meta name="description" content="Cómo usar Tags (etiquetas) correctamente en SketchUp: la regla de oro de la geometría sin etiquetar, organización por disciplina y escenas para gestionar visibilidad.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/variables.css">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/componentes.css">
+<link rel="stylesheet" href="../assets/css/paginas.css">
+
+<style>
+  .lista-tags { list-style:none; margin: var(--sp-4) 0; padding:0; border:1px solid var(--borde); border-radius: var(--radio-md); overflow:hidden; }
+  .lista-tags li {
+    display:flex; align-items:center; gap: var(--sp-3);
+    padding: var(--sp-3) var(--sp-4);
+    border-bottom: 1px solid var(--borde);
+    font-size: var(--tam-sm);
+  }
+  .lista-tags li:last-child { border-bottom:none; }
+  .punto-tag { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+  .lista-tags .ojo { margin-left:auto; color: var(--texto-suave); }
+  .lista-tags .ojo svg { width:16px; height:16px; }
+</style>
+</head>
+<body>
+<a href="#contenido" class="enlace-salto">Saltar al contenido</a>
+
+<div id="navbar-placeholder"></div>
+
+<main id="contenido" class="contenedor">
+
+  <p class="migas">
+    <a href="../index.html">Inicio</a> <i data-lucide="chevron-right" style="width:14px;height:14px;"></i> Módulo 5
+  </p>
+
+  <div class="layout-modulo">
+
+    <aside id="sidebar-modulos-placeholder"></aside>
+
+    <article>
+      <header class="contenido-modulo__cabecera" data-aos="fade-up">
+        <div class="contenido-modulo__meta">
+          <span class="etiqueta-eje eje-y">Nivel intermedio</span>
+          <span>·</span>
+          <span>10 min de lectura</span>
+        </div>
+        <h1>Capas y etiquetas (Tags)</h1>
+        <p style="font-size: var(--tam-md); max-width: 62ch;">
+          Las etiquetas no organizan geometría — organizan <strong>visibilidad</strong>. Entender
+          esa diferencia evita el 90% de los modelos desordenados.
+        </p>
+      </header>
+
+      <!-- Qué son -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Qué son (y qué no son) las etiquetas</h2>
+        <p>
+          Desde SketchUp 2020, lo que antes se llamaba "Capas" (Layers) se renombró a
+          <strong>Tags</strong> (etiquetas) — un cambio de nombre deliberado, porque en SketchUp una
+          etiqueta no contiene geometría como en AutoCAD; solo controla si un grupo o componente es
+          visible o no.
+        </p>
+
+        <div class="callout callout--advertencia">
+          <i data-lucide="triangle-alert"></i>
+          <p><strong>Regla de oro:</strong> nunca dibujes geometría "suelta" (líneas, caras) directamente
+          sobre una etiqueta distinta de <kbd>Sin etiquetar</kbd>. Dibuja siempre en
+          <kbd>Sin etiquetar</kbd>, agrupa esa geometría, y aplica la etiqueta al grupo completo.
+          Romper esta regla es la causa número uno de "geometría fantasma" que reaparece al
+          reactivar una etiqueta.</p>
+        </div>
+      </section>
+
+      <!-- Ejemplo de organización -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Organización típica por disciplina</h2>
+        <p>En un proyecto de arquitectura, una estructura de etiquetas común se ve así:</p>
+
+        <ul class="lista-tags" role="list">
+          <li><span class="punto-tag" style="background:var(--eje-x);"></span> Estructura <span class="ojo"><i data-lucide="eye"></i></span></li>
+          <li><span class="punto-tag" style="background:var(--eje-y);"></span> Mobiliario <span class="ojo"><i data-lucide="eye"></i></span></li>
+          <li><span class="punto-tag" style="background:var(--eje-z);"></span> Acabados <span class="ojo"><i data-lucide="eye"></i></span></li>
+          <li><span class="punto-tag" style="background:#c9a04a;"></span> Vegetación <span class="ojo"><i data-lucide="eye-off"></i></span></li>
+          <li><span class="punto-tag" style="background:#8a7fc9;"></span> Cotas y anotaciones <span class="ojo"><i data-lucide="eye-off"></i></span></li>
+        </ul>
+
+        <p>
+          Con esta estructura, puedes ocultar "Vegetación" y "Cotas" para revisar la estructura pura,
+          o mostrar solo "Mobiliario" y "Acabados" para una vista de presentación — sin borrar nada.
+        </p>
+      </section>
+
+      <!-- Escenas -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Escenas: fotografías del estado del modelo</h2>
+        <p>
+          Una <strong>escena</strong> (pestaña en la parte superior del viewport) guarda una
+          combinación de: posición de cámara, qué etiquetas están visibles, el estilo activo y
+          la ubicación de la sección. Son la base para:
+        </p>
+        <div class="grid-paneles">
+          <div class="panel-item">
+            <h4><i data-lucide="presentation"></i> Presentaciones</h4>
+            <p>Alterna entre vistas guardadas para explicar un proyecto paso a paso.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="file-output"></i> Exportación a LayOut</h4>
+            <p>Cada viewport de LayOut referencia una escena específica de SketchUp.</p>
+          </div>
+          <div class="panel-item">
+            <h4><i data-lucide="film"></i> Animaciones</h4>
+            <p>SketchUp interpola entre escenas consecutivas para crear recorridos.</p>
+          </div>
+        </div>
+
+        <div class="callout callout--tip">
+          <i data-lucide="lightbulb"></i>
+          <p><strong>Tip:</strong> al crear una escena, desmarca "Propiedades de estilo" si solo
+          quieres que guarde cámara y visibilidad de etiquetas — así puedes cambiar el estilo
+          global del proyecto sin que cada escena antigua lo sobreescriba.</p>
+        </div>
+      </section>
+
+      <!-- Atajos -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Paneles de este módulo</h2>
+        <table class="tabla-plano">
+          <thead><tr><th>Panel</th><th>Función</th></tr></thead>
+          <tbody>
+            <tr><td>Tags</td><td>Crear, colorear y controlar visibilidad de etiquetas</td></tr>
+            <tr><td>Escenas (Scenes)</td><td>Guardar y actualizar estados del modelo</td></tr>
+            <tr><td>Entity Info</td><td>Reasignar la etiqueta de un grupo seleccionado</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Mini ejercicio -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Mini-ejercicio</h2>
+        <div class="callout callout--tip">
+          <i data-lucide="target"></i>
+          <p><strong>Practica ahora:</strong> crea 3 etiquetas (Estructura, Mobiliario, Acabados),
+          asigna cada grupo de tu modelo a la etiqueta correspondiente, y guarda dos escenas: una
+          con todo visible y otra mostrando solo "Estructura".</p>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section class="bloque-contenido" data-aos="fade-up">
+        <h2>Quiz de repaso</h2>
+        <div class="quiz-box">
+
+          <div class="quiz-pregunta" data-correcta="1">
+            <p>¿Dónde se debe dibujar geometría nueva (líneas, caras) antes de agruparla?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">En la etiqueta del elemento final</button>
+              <button class="quiz-opcion">En "Sin etiquetar"</button>
+              <button class="quiz-opcion">No importa dónde</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="2">
+            <p>¿Qué guarda una escena, además de la cámara?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Solo el nombre del archivo</button>
+              <button class="quiz-opcion">Los materiales aplicados a cada cara</button>
+              <button class="quiz-opcion">Visibilidad de etiquetas, estilo y sección</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+          <div class="quiz-pregunta" data-correcta="0">
+            <p>¿Cómo se llamaban las etiquetas antes de SketchUp 2020?</p>
+            <div class="quiz-opciones">
+              <button class="quiz-opcion">Capas (Layers)</button>
+              <button class="quiz-opcion">Grupos</button>
+              <button class="quiz-opcion">Estilos</button>
+            </div>
+            <div class="quiz-resultado"></div>
+          </div>
+
+        </div>
+      </section>
+
+      <div style="display:flex; justify-content:center; margin-bottom: var(--sp-12);">
+        <button id="btn-marcar-completo" class="btn-plano btn-plano--secundario"></button>
+      </div>
+
+      <nav class="nav-modulo" aria-label="Navegación entre módulos">
+        <a href="04-materiales-texturas.html">
+          <span class="direccion"><i data-lucide="arrow-left" style="width:14px;height:14px;"></i> Anterior</span>
+          Módulo 4 — Materiales y texturas
+        </a>
+        <a href="06-componentes-grupos.html" class="siguiente">
+          <span class="direccion">Siguiente <i data-lucide="arrow-right" style="width:14px;height:14px;"></i></span>
+          Módulo 6 — Grupos y componentes
+        </a>
+      </nav>
+
+    </article>
+  </div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script src="../assets/js/datos-modulos.js"></script>
+<script src="../assets/js/componentes.js"></script>
+<script src="../assets/js/tema.js"></script>
+<script src="../assets/js/navegacion.js"></script>
+<script src="../assets/js/progreso.js"></script>
+<script src="../assets/js/quizzes.js"></script>
+<script src="../assets/js/main.js" defer></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSidebarModulos("05");
+    inicializarBotonCompletado("05");
+  });
+</script>
+
+</body>
+</html>
