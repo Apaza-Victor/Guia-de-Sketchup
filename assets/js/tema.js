@@ -23,8 +23,7 @@ function actualizarIconoTema(tema) {
 }
 
 function inicializarTema() {
-  const preferido = temaGuardado()
-    || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "oscuro" : "claro");
+  const preferido = temaGuardado() || "oscuro";
   aplicarTema(preferido);
 }
 

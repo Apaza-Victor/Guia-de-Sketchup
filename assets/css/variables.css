@@ -69,6 +69,12 @@
   --texto: var(--tinta);
   --texto-suave: var(--tinta-suave);
   --borde: var(--linea-plano);
+
+  /* Navbar y footer usan fondo ligeramente distinto para contraste */
+  --navbar-bg: var(--papel);
+  --navbar-borde: var(--borde);
+  --footer-bg: var(--papel-alt);
+  --footer-borde: var(--borde);
 }
 
 /* ---- Modo oscuro ("plano en negativo") ---- */
@@ -83,6 +89,11 @@
   --eje-x-suave: #3a2420;
   --eje-y-suave: #1c3227;
   --eje-z-suave: #17293e;
+
+  --navbar-bg: #0c1015;
+  --navbar-borde: #1e2d38;
+  --footer-bg: #0a0e13;
+  --footer-borde: #1a2830;
 
   --sombra-suave: 0 2px 10px rgba(0, 0, 0, 0.35);
   --sombra-media: 0 8px 30px rgba(0, 0, 0, 0.45);

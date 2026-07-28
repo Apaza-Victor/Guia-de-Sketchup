@@ -10,8 +10,8 @@
   height: var(--alto-navbar);
   display: flex;
   align-items: center;
-  background: var(--bg);
-  border-bottom: 1px solid var(--borde);
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-borde);
   transition: box-shadow 0.2s ease;
 }
 
@@ -196,7 +196,8 @@
 
 /* ---- Footer ---- */
 .footer-app {
-  border-top: 1px solid var(--borde);
+  background: var(--footer-bg);
+  border-top: 1px solid var(--footer-borde);
   padding: var(--sp-16) 0 var(--sp-8);
   margin-top: var(--sp-24);
 }
