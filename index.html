@@ -165,6 +165,195 @@
     .hero__stats { gap: var(--sp-4); }
     .hero__stats strong { font-size: var(--tam-md); }
   }
+
+  /* Herramientas esenciales */
+  .grid-herramientas {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--sp-5);
+  }
+  @media (max-width: 900px) { .grid-herramientas { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px) { .grid-herramientas { grid-template-columns: repeat(2, 1fr); } }
+
+  .herramienta-card {
+    text-align: center;
+    padding: var(--sp-6) var(--sp-4);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-lg);
+    background: var(--bg-alt);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .herramienta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .herramienta-card__icono {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: var(--radio-md);
+    color: var(--eje-z);
+    background: color-mix(in srgb, var(--eje-z) 10%, transparent);
+  }
+  .herramienta-card__tecla {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-xs);
+    color: var(--eje-x);
+    background: var(--bg);
+    border: 1px solid var(--borde);
+    border-bottom-width: 2px;
+    border-radius: var(--radio-sm);
+    padding: 0.15em 0.5em;
+  }
+  .herramienta-card h4 { font-size: var(--tam-sm); margin: 0; }
+  .herramienta-card p { font-size: var(--tam-xs); color: var(--texto-suave); margin: 0; }
+
+  /* Ruta de aprendizaje */
+  .ruta-modulos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--sp-4);
+  }
+  @media (max-width: 900px) { .ruta-modulos { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px) { .ruta-modulos { grid-template-columns: 1fr 1fr; } }
+
+  .ruta-card {
+    padding: var(--sp-5);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-lg);
+    background: var(--bg-alt);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .ruta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    border-color: var(--eje-x);
+  }
+  .ruta-card__num {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-xs);
+    color: var(--texto-suave);
+    letter-spacing: 0.05em;
+  }
+  .ruta-card h4 {
+    font-size: var(--tam-sm);
+    margin: 0;
+    line-height: 1.3;
+  }
+  .ruta-card p {
+    font-size: var(--tam-xs);
+    color: var(--texto-suave);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .ruta-card__nivel {
+    font-family: var(--fuente-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.6em;
+    border-radius: 999px;
+    display: inline-block;
+    width: fit-content;
+    margin-top: auto;
+    border: 1px solid;
+  }
+  .nivel-basico { color: var(--eje-y); border-color: var(--eje-y); background: color-mix(in srgb, var(--eje-y) 8%, transparent); }
+  .nivel-intermedio { color: var(--eje-z); border-color: var(--eje-z); background: color-mix(in srgb, var(--eje-z) 8%, transparent); }
+  .nivel-avanzado { color: var(--eje-x); border-color: var(--eje-x); background: color-mix(in srgb, var(--eje-x) 8%, transparent); }
+
+  /* Atajos populares */
+  .grid-atajos-pop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-4);
+  }
+  @media (max-width: 900px) { .grid-atajos-pop { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .grid-atajos-pop { grid-template-columns: 1fr; } }
+
+  .atajo-pop {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+    padding: var(--sp-4) var(--sp-5);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-lg);
+    background: var(--bg-alt);
+    transition: border-color 0.2s ease;
+  }
+  .atajo-pop:hover { border-color: var(--eje-z); }
+  .atajo-pop__tecla {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-sm);
+    color: var(--eje-x);
+    background: var(--bg);
+    border: 1px solid var(--borde);
+    border-bottom-width: 2px;
+    border-radius: var(--radio-sm);
+    padding: 0.25em 0.65em;
+    white-space: nowrap;
+    min-width: 40px;
+    text-align: center;
+  }
+  .atajo-pop__info h4 { font-size: var(--tam-sm); margin: 0; }
+  .atajo-pop__info p { font-size: var(--tam-xs); color: var(--texto-suave); margin: 0; }
+
+  /* Antes y después */
+  .grid-comparativa {
+    display: grid;
+    grid-template-columns: 1fr var(--sp-8) 1fr;
+    gap: var(--sp-8);
+    align-items: start;
+  }
+  @media (max-width: 900px) { .grid-comparativa { grid-template-columns: 1fr; gap: var(--sp-6); } }
+
+  .comparativa-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+  .comparativa-col__titulo {
+    font-family: var(--fuente-mono);
+    font-size: var(--tam-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: var(--sp-3);
+    border-bottom: 2px solid var(--borde);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+  }
+  .comparativa-item {
+    padding: var(--sp-4);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio-md);
+    background: var(--bg-alt);
+    font-size: var(--tam-sm);
+  }
+  .comparativa-item--antes { border-left: 3px solid var(--texto-suave); }
+  .comparativa-item--despues { border-left: 3px solid var(--eje-y); }
+
+  .comparativa-flecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--eje-x);
+    font-size: var(--tam-xl);
+    padding-top: var(--sp-20);
+  }
+  @media (max-width: 900px) {
+    .comparativa-flecha { padding-top: 0; transform: rotate(90deg); }
+  }
 </style>
 </head>
 <body>
@@ -275,6 +464,55 @@
     </div>
   </section>
 
+  <!-- HERRAMIENTAS ESENCIALES -->
+  <section class="seccion" style="padding-top: 0;">
+    <div>
+      <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
+        <span style="font-family: var(--fuente-mono); color: var(--eje-z); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Las 6 herramientas que cambiarán tu forma de modelar</span>
+        <h2 style="font-size: var(--tam-xl);">Herramientas esenciales</h2>
+        <p>Estas son las bases de todo modelado en SketchUp. Dominarás cada una en los primeros módulos.</p>
+      </div>
+      <div class="grid-herramientas" data-aos="fade-up">
+        <div class="herramienta-card">
+          <div class="herramienta-card__icono"><i data-lucide="move"></i></div>
+          <span class="herramienta-card__tecla">M</span>
+          <h4>Mover</h4>
+          <p>Traslada geometría con precisión milimétrica sobre cualquier eje.</p>
+        </div>
+        <div class="herramienta-card">
+          <div class="herramienta-card__icono"><i data-lucide="square-dashed-bottom"></i></div>
+          <span class="herramienta-card__tecla">P</span>
+          <h4>Push/Pull</h4>
+          <p>Extruye caras para crear volúmenes 3D con un solo movimiento.</p>
+        </div>
+        <div class="herramienta-card">
+          <div class="herramienta-card__icono"><i data-lucide="rotate-ccw"></i></div>
+          <span class="herramienta-card__tecla">Q</span>
+          <h4>Rotar</h4>
+          <p>Gira objetos alrededor de un punto y eje que tú defines.</p>
+        </div>
+        <div class="herramienta-card">
+          <div class="herramienta-card__icono"><i data-lucide="scaling"></i></div>
+          <span class="herramienta-card__tecla">S</span>
+          <h4>Escalar</h4>
+          <p>Cambia el tamaño proporcional o por ejes individuales.</p>
+        </div>
+        <div class="herramienta-card">
+          <div class="herramienta-card__icono"><i data-lucide="circle-dot"></i></div>
+          <span class="herramienta-card__tecla">O</span>
+          <h4>Offset</h4>
+          <p>Crea bordes paralelos: molduras, marcos, paredes con espesor.</p>
+        </div>
+        <div class="herramienta-card">
+          <div class="herramienta-card__icono"><i data-lucide="move-3d"></i></div>
+          <span class="herramienta-card__tecla">F</span>
+          <h4>Follow Me</h4>
+          <p>Extruye una cara a lo largo de cualquier ruta curva o poligonal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CÓMO FUNCIONA LA GUÍA -->
   <section class="seccion" style="padding-top: 0;">
     <div>
@@ -340,6 +578,172 @@
         <div style="padding: var(--sp-6); border: 1px solid var(--borde); border-radius: var(--radio-lg); background: var(--bg-alt); border-left: 3px solid var(--eje-x);">
           <h4 style="font-size: var(--tam-md); margin-bottom: var(--sp-2);">Atajos y productividad</h4>
           <p style="font-size: var(--tam-sm); margin: 0;">Dominar atajos de teclado, herramientas de búsqueda y trucos para trabajar el doble de rápido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RUTA DE APRENDIZAJE -->
+  <section class="seccion" style="padding-top: 0;">
+    <div>
+      <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
+        <span style="font-family: var(--fuente-mono); color: var(--eje-x); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Tu camino</span>
+        <h2 style="font-size: var(--tam-xl);">Los 10 módulos que te transformarán</h2>
+        <p>Cada módulo construye sobre el anterior. Haz clic para empezar por donde quieras.</p>
+      </div>
+      <div class="ruta-modulos" data-aos="fade-up">
+        <a href="paginas/01-interfaz.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 01</span>
+          <h4>Interfaz de usuario</h4>
+          <p>Toolbar, paneles, ejes, cámara y navegación básica.</p>
+          <span class="ruta-card__nivel nivel-basico">Básico</span>
+        </a>
+        <a href="paginas/02-herramientas-basicas.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 02</span>
+          <h4>Herramientas básicas</h4>
+          <p>Línea, rectángulo, círculo, Push/Pull y Offset.</p>
+          <span class="ruta-card__nivel nivel-basico">Básico</span>
+        </a>
+        <a href="paginas/03-grupos-componentes.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 03</span>
+          <h4>Grupos y componentes</h4>
+          <p>Organización, namespaces, bloques reutilizables.</p>
+          <span class="ruta-card__nivel nivel-basico">Básico</span>
+        </a>
+        <a href="paginas/04-materiales-texturas.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 04</span>
+          <h4>Materiales y texturas</h4>
+          <p>Paint Bucket, UV mapping, creación de materiales PBR.</p>
+          <span class="ruta-card__nivel nivel-intermedio">Intermedio</span>
+        </a>
+        <a href="paginas/05-capas-escenas.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 05</span>
+          <h4>Capas y escenas</h4>
+          <p>Tags, visibilidad, escenas para presentación.</p>
+          <span class="ruta-card__nivel nivel-intermedio">Intermedio</span>
+        </a>
+        <a href="paginas/06-herramientas-avanzadas.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 06</span>
+          <h4>Herramientas avanzadas</h4>
+          <p>Follow Me, sándwich, sólidos y modelado complejo.</p>
+          <span class="ruta-card__nivel nivel-intermedio">Intermedio</span>
+        </a>
+        <a href="paginas/07-plugins.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 07</span>
+          <h4>Plugins y extensiones</h4>
+          <p>Extension Warehouse, instalación, curvatura, parametrización.</p>
+          <span class="ruta-card__nivel nivel-avanzado">Avanzado</span>
+        </a>
+        <a href="paginas/08-renders.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 08</span>
+          <h4>Render y visualización</h4>
+          <p>V-Ray / Enscape, iluminación, materiales fotorrealistas.</p>
+          <span class="ruta-card__nivel nivel-avanzado">Avanzado</span>
+        </a>
+        <a href="paginas/09-layout.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 09</span>
+          <h4>LayOut y documentación</h4>
+          <p>Planos, cotas, plantas, cortes y entregables técnicos.</p>
+          <span class="ruta-card__nivel nivel-avanzado">Avanzado</span>
+        </a>
+        <a href="paginas/10-flujos-profesionales.html" class="ruta-card">
+          <span class="ruta-card__num">Módulo 10</span>
+          <h4>Flujos profesionales</h4>
+          <p>Ruby API, impresión 3D, workflows completos de estudio.</p>
+          <span class="ruta-card__nivel nivel-avanzado">Avanzado</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATAJOS MÁS USADOS -->
+  <section class="seccion" style="padding-top: 0;">
+    <div>
+      <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
+        <span style="font-family: var(--fuente-mono); color: var(--eje-z); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Productividad desde el día 1</span>
+        <h2 style="font-size: var(--tam-xl);">Los atajos que necesitas saber</h2>
+        <p>Estos 6 atajos cubren el 80% de tu trabajo diario. Aprenderlos te ahorrará cientos de clics.</p>
+      </div>
+      <div class="grid-atajos-pop" data-aos="fade-up">
+        <div class="atajo-pop">
+          <span class="atajo-pop__tecla">Espacio</span>
+          <div class="atajo-pop__info">
+            <h4>Seleccionar</h4>
+            <p>Herramienta por defecto — vuelve aquí siempre que necesites parar.</p>
+          </div>
+        </div>
+        <div class="atajo-pop">
+          <span class="atajo-pop__tecla">P</span>
+          <div class="atajo-pop__info">
+            <h4>Push/Pull</h4>
+            <p>Extruye caras para crear volúmenes 3D al instante.</p>
+          </div>
+        </div>
+        <div class="atajo-pop">
+          <span class="atajo-pop__tecla">M</span>
+          <div class="atajo-pop__info">
+            <h4>Mover + Ctrl</h4>
+            <p>Copia objetos mientras los mueves. Escribe cantidad para multiplicar.</p>
+          </div>
+        </div>
+        <div class="atajo-pop">
+          <span class="atajo-pop__tecla">O</span>
+          <div class="atajo-pop__info">
+            <h4>Offset</h4>
+            <p>Bordes paralelos: marcos, molduras, paredes con espesor.</p>
+          </div>
+        </div>
+        <div class="atajo-pop">
+          <span class="atajo-pop__tecla">Ctrl + Z</span>
+          <div class="atajo-pop__info">
+            <h4>Deshacer</h4>
+            <p>El mejor amigo del principiante. Deshace hasta 100 pasos.</p>
+          </div>
+        </div>
+        <div class="atajo-pop">
+          <span class="atajo-pop__tecla">K</span>
+          <div class="atajo-pop__info">
+            <h4>Back Edges</h4>
+            <p>Muestra aristas ocultas como líneas punteadas. Ver a través del modelo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES Y DESPUÉS -->
+  <section class="seccion" style="padding-top: 0;">
+    <div>
+      <div style="text-align: center; max-width: 620px; margin: 0 auto var(--sp-12);" data-aos="fade-up">
+        <span style="font-family: var(--fuente-mono); color: var(--eje-y); font-size: var(--tam-sm); display: block; margin-bottom: var(--sp-2);">Transformación</span>
+        <h2 style="font-size: var(--tam-xl);">Antes y después de la guía</h2>
+        <p>Una comparación directa de lo que sabías vs. lo que dominarás al terminar los 10 módulos.</p>
+      </div>
+      <div class="grid-comparativa" data-aos="fade-up">
+        <div class="comparativa-col">
+          <div class="comparativa-col__titulo" style="color: var(--texto-suave); border-color: var(--texto-suave);">
+            <i data-lucide="x-circle" style="width:18px; height:18px;"></i> Antes
+          </div>
+          <div class="comparativa-item comparativa-item--antes">No sé qué es un eje ni cómo mover la cámara</div>
+          <div class="comparativa-item comparativa-item--antes">Dibujo líneas pero no sé cómo cerrar caras</div>
+          <div class="comparativa-item comparativa-item--antes">No entiendo la diferencia entre grupo y componente</div>
+          <div class="comparativa-item comparativa-item--antes">Mis modelos se vuelven lentos y desordenados</div>
+          <div class="comparativa-item comparativa-item--antes">No sé cómo aplicar texturas correctamente</div>
+          <div class="comparativa-item comparativa-item--antes">No puedo hacer renders ni presentar proyectos</div>
+        </div>
+        <div class="comparativa-flecha">
+          <i data-lucide="arrow-right" style="width:32px; height:32px;"></i>
+        </div>
+        <div class="comparativa-col">
+          <div class="comparativa-col__titulo" style="color: var(--eje-y); border-color: var(--eje-y);">
+            <i data-lucide="check-circle" style="width:18px; height:18px;"></i> Después
+          </div>
+          <div class="comparativa-item comparativa-item--despues">Navego la cámara con soltura y entiendo el espacio 3D</div>
+          <div class="comparativa-item comparativa-item--despues">Creo geometría compleja con Push/Pull, Follow Me y Offset</div>
+          <div class="comparativa-item comparativa-item--despues">Organizo con grupos, componentes y capas como un profesional</div>
+          <div class="comparativa-item comparativa-item--despues">Mis modelos son ligeros, limpios y fáciles de editar</div>
+          <div class="comparativa-item comparativa-item--despues">Aplico materiales PBR con UV mapping preciso</div>
+          <div class="comparativa-item comparativa-item--despues">Genero renders fotorrealistas y planos con LayOut</div>
         </div>
       </div>
     </div>
